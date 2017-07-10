@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MovieIndex extends Component {
+export default class MovieList extends Component {
   constructor() {
     super();
   }
@@ -8,7 +8,7 @@ export default class MovieIndex extends Component {
   render() {
     return (
       <div>
-        MOVIES
+        MOVIESafas
       </div>
     )
   }
