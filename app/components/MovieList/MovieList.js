@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+
 export default class MovieList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         MOVIESafas
