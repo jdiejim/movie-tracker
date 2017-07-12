@@ -14,7 +14,8 @@ class Movies {
       })
       .then(res => res.json())
       .then(({ results }) => {
-        return dispatch(movieFetchSuccess(results))
+        const movies = results.map( movie => new Movie(movie))
+        return dispatch(movieFetchSuccess(movies))
       });
     }
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieCard from '../MovieCard/MovieCard';
 
 export default class MovieList extends Component {
   constructor(props) {
@@ -19,8 +20,8 @@ export default class MovieList extends Component {
     }
     console.log(this.props);
     return (
-      <div>
-        MOVIESafas
+      <div className='movie-list'>
+      { this.props.movies.map( movie => <MovieCard movie={ movie }/>) }
       </div>
     )
   }
