@@ -1,4 +1,4 @@
-import { MOVIES_FETCH_SUCCESS } from '../../utils/constants';
+import { MOVIES_FETCH_SUCCESS, MOVIES_ARE_LOADING } from '../../utils/constants';
 
 export const moviesSuccessReducer = (state = [], action) => {
   switch (action.type) {
@@ -11,7 +11,7 @@ export const moviesSuccessReducer = (state = [], action) => {
 
 export const moviesAreLoadingReducer = (state = false, action) => {
   switch (action.type) {
-    case 'MOVIES_ARE_LOADING':
+    case MOVIES_ARE_LOADING:
       return action.isLoading
     default:
       return state;

@@ -4,25 +4,25 @@ import MovieCard from '../MovieCard/MovieCard';
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      movies: []
-    }
   }
 
   componentDidMount(){
-    console.log(this.props)
     this.props.fetchMovies();
   }
 
   render() {
-    if (this.props.isLoading) {
+    const { movies, isLoading } = this.props;
+
+    if (isLoading) {
       return <div>loading...</div>
     }
-    console.log(this.props);
+
+    const moviesArray = movies.map(movie => <MovieCard key={movie.id} movie={movie} />);
+
     return (
-      <div className='movie-list'>
-      { this.props.movies.map( movie => <MovieCard movie={ movie }/>) }
-      </div>
+      <section className='movie-list'>
+        {moviesArray}
+      </section>
     )
   }
 }
