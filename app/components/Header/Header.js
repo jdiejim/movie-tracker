@@ -9,7 +9,7 @@ const Header = () => {
         <button>Login</button>
         <button>Submit</button>
       </nav>
-      <CarouselContainer/>
+      <CarouselContainer />
     </header>
   )
 }

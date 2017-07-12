@@ -4,4 +4,4 @@ node_modules/
 
 
 # API Key
-apiKey.js
+./app/utils/api_key.js

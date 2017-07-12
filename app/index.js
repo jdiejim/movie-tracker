@@ -12,7 +12,7 @@ const middleware = [routerConnected]
 const store = createStore(
     rootReducer,
     devTools,
-    applyMiddleware(middleware));
+    applyMiddleware(...middleware));
 
 ReactDOM.render(
   <Provider store={store} >

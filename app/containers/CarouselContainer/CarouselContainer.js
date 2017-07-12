@@ -3,7 +3,7 @@ import Carousel from '../../components/Carousel/Carousel';
 import { goToMovie } from '../../action';
 
 const mapStateToProps = (state) => {
-  return {movieDetail: state.movieDetail}
+  return { movieDetail: state.movieDetail }
 }
 
 const mapDispatchToProps = (dispatch) => {
