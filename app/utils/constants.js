@@ -9,3 +9,4 @@ export const getUpcoming = (page) => `https://api.themoviedb.org/3/movie/upcomin
 
 // Actions
 export const GOTO_MOVIE = 'GOTO_MOVIE';
+export const MOVIES_FETCH_SUCCESS = 'MOVIES_FETCH_SUCCESS';

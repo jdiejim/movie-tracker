@@ -1,13 +1,22 @@
 import Movie from './Movie';
 import { getNowPlaying } from '../utils/constants';
+import { movieFetchSuccess, moviesAreLoading } from '../action';
 
 class Movies {
-  fetchMovies(component) {
-    fetch(getNowPlaying(1))
+  fetchMovies() {
+    return (dispatch) => {
+      dispatch(moviesAreLoading(true))
+
+      fetch(getNowPlaying(1))
+      .then(res => {
+        dispatch(moviesAreLoading(false))
+        return res;
+      })
       .then(res => res.json())
-      .then(({ results }) => component.setState({
-        movies: results.map(movie => new Movie(movie))
-      }));
+      .then(({ results }) => {
+        return dispatch(movieFetchSuccess(results))
+      });
+    }
   }
 }
 

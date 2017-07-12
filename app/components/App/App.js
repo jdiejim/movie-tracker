@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import { getMovieDetail, getNowPlaying, getImageURL, getUpcoming } from '../../utils/constants';
 import Movies from '../../model/Movies';
 import Header from '../Header/Header'
+import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
 
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {
-      movies: []
-    }
   }
 
   componentDidMount() {
-    new Movies().fetchMovies(this)
 
   }
 
@@ -20,8 +17,8 @@ export default class App extends Component {
     return (
       <div className="app">
         <Header/>
-        <img src={this.state.image} />
         <h1>Movie Watcher</h1>
+        <MovieListContainer />
       </div>
     )
   }
