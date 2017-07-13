@@ -3,7 +3,8 @@ import Header from '../../components/Header/Header';
 import {signUp, logIn } from '../../action'
 
 const mapStateToProps = (state) => {
-  return {movies: state.movies}
+  return {movies: state.movies,
+          user: state.user}
 }
 
 const mapDispatchToProps = (dispatch) => {
