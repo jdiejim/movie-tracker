@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { getMovieDetail, getNowPlaying, getImageURL, getUpcoming } from '../../utils/constants';
 import Movies from '../../model/Movies';
-import Header from '../Header/Header'
+import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
+import LogInPopUp from '../LogInPopUp/LogInPopUp'
 
 export default class App extends Component {
   constructor() {
@@ -16,7 +17,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <Header/>
+        <HeaderContainer/>
+        <LogInPopUp/>
         <h1>Movie Watcher</h1>
         <MovieListContainer />
       </div>

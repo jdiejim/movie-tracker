@@ -17,3 +17,17 @@ export const moviesAreLoading = (bool) => {
 export const fetchMovies = () => {
   return new Movies().fetchMovies()
 }
+
+export const signUp = (name, email, password) => {
+  return {
+           type: 'SIGN_UP',
+           user: {name, email, password}
+         }
+}
+
+export const logIn = (email, password) => {
+  return {
+           type: 'LOG_IN',
+           user: {email, password}
+         }
+}

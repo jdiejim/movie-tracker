@@ -1,15 +1,15 @@
 import React from 'react';
-import CarouselContainer from '../../containers/CarouselContainer/CarouselContainer'
+import { NavLink } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = (props) => {
+  console.log(props);
   return(
     <header className="header">
       <nav>
-        <button>Login</button>
-        <button>Submit</button>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/signup">Sign Up</NavLink>
       </nav>
-      <CarouselContainer />
     </header>
   )
 }
