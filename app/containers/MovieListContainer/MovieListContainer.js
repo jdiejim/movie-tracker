@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     movies: state.movies,
     isLoading: state.isLoading,
+    user: state.user,
   }
 }
 

@@ -38,6 +38,11 @@ class User {
       .catch(err => dispatch(userLogInFail(true)))
     }
   }
+
+
+  addFavorite(movieId) {
+    
+  }
 }
 
 export default User;

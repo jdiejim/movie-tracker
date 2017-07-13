@@ -99,6 +99,14 @@ body {
   z-index: 1;
 }
 
+.save-btn {
+  z-index: 100;
+  position:absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 .movie-info {
   position: absolute;
   left: 0;

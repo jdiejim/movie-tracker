@@ -11,13 +11,14 @@ export default class MovieList extends Component {
   }
 
   render() {
-    const { movies, isLoading } = this.props;
+    console.log();
+    const { movies, isLoading, user } = this.props;
 
     if (isLoading) {
       return <div>loading...</div>
     }
 
-    const moviesArray = movies.map(movie => <MovieCard key={movie.id} movie={movie} />);
+    const moviesArray = movies.map(movie => <MovieCard key={movie.id} movie={movie} user={user} />);
 
     return (
       <section className='movie-list'>
