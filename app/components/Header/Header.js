@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 
 const Header = (props) => {
+  const username = <h3>usernamehere</h3>
   return(
     <header className="header">
-      <nav>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up</Link>
+      <nav className="nav-bar">
+        <h3 className="nav-title">Movie <span>Tracker</span></h3>
+        <div className="nav-link-container">
+          <Link className="nav-link login-link" to="/login">Login</Link>
+          <Link className="nav-link signup-link" to="/signup">Sign Up</Link>
+        </div>
       </nav>
     </header>
   )

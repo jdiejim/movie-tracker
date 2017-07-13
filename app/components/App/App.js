@@ -19,17 +19,16 @@ export default class App extends Component {
     const { location: { pathname } } = this.props;
     const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
     return (
-      <div className={appClass} >
+      <main className={appClass} >
         <HeaderContainer/>
-        <Route path='/signup' render={() => {
-          return <LogInPopUp {...this.props} type='signup'/>
-        }}/>
-        <Route path='/login' render={() => {
-          return <LogInPopUp {...this.props} type='login'/>
-        }}/>
-        <h1>Movie Watcher</h1>
+          <Route path='/signup' render={() => {
+            return <LogInPopUp {...this.props} type='signup'/>
+          }}/>
+          <Route path='/login' render={() => {
+            return <LogInPopUp {...this.props} type='login'/>
+          }}/>
         <MovieListContainer />
-      </div>
+      </main>
     )
   }
 }

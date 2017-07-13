@@ -11,6 +11,7 @@ class LogInPopUp extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleChange(e) {
@@ -31,14 +32,21 @@ class LogInPopUp extends Component {
     this.props.history.push('/');
   }
 
+  handleBlur() {
+    this.props.history.push('/');
+  }
+
+
+
   render() {
     const { type, signUp } = this.props;
     const title = type === 'signup' ? 'Sign Up' : 'Log In'
     const nameInput = type === 'signup' ? <input className='popup-input' onChange={ this.handleChange } type="text" name="name" placeholder="Enter name" /> : '';
 
     return (
-      <div id='login'>
+      <div id='login' onBlur={this.handleBlur}>
         <h1 className='popup-title'>{ title }</h1>
+        <button className='close-modal' onClick={ this.handleBlur }>close</button>
         <form className='login-popup' onSubmit={ this.handleSubmit }>
           { nameInput }
           <section className="popup-input-wrapper">
