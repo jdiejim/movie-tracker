@@ -1,6 +1,6 @@
 import MovieList from '../../components/MovieList/MovieList';
 import { connect } from 'react-redux';
-import { fetchMovies } from '../../action';
+import { fetchMovies, postFavorite } from '../../action';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: () => dispatch(fetchMovies()),
+    postFavorite: (movie, user_id) => dispatch(postFavorite(movie, user_id))
   }
 }
 

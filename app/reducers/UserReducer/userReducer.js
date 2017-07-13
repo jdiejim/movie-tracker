@@ -20,3 +20,13 @@ export const userFailReducer = (state=false, action) => {
       return false
   }
 }
+
+export const addFavoriteReducer = (state=false, action) => {
+  console.log(action);
+  switch (action.type) {
+    case 'ADD_SUCCESS':
+      return true;
+    default:
+      return false;
+  }
+}

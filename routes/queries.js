@@ -28,7 +28,7 @@ function signIn(req, res, next) {
     .json({
       status: 'success',
       user: {
-        name: data.name, email: data.email
+        name: data.name, email: data.email, id: data.id
       },
       message: 'Retrieved ONE User'
     });
@@ -42,7 +42,7 @@ function createUser(req, res, next) {
   req.body.email = req.body.email.toLowerCase();
   db.one('insert into users(name, password, email)' + 'values(${name}, ${password}, ${email}) returning *', req.body).then(function(data) {
     res.status(200).json({ status: 'success', message: "New user created", user: {
-      name: data.name, email: data.email
+      name: data.name, email: data.email, id: data.id
     }});
   }).catch(function(err) {
     res.status(500).json({error: err.detail });

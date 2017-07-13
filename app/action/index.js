@@ -46,3 +46,11 @@ export const createNewUser = (body) => {
 export const fetchLogInUser = (body) => {
   return new User().logInUser(body)
 }
+
+export const addFavoriteSuccess = () => {
+  return { type: 'ADD_SUCCESS' }
+}
+
+export const postFavorite = (movie, user_id) => {
+  return new User().addFavorite(movie, user_id);
+}
