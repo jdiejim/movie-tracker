@@ -40,9 +40,9 @@ describe('Action', () => {
   })
 
   it('06: should create userIsLoading', () => {
-    const body = {name: 'spider guy', email: 'spiderguy2011@imadummy.com', password: 'supercool'}
+    const expected = {type: 'USER_IS_LOADING', userLoading: true}
 
-    expect(actions.userIsLoading(true)).toEqual({type: 'USER_IS_LOADING', userLoading: true})
+    expect(actions.userIsLoading(true)).toEqual(expected)
   })
 
   it('07: should create userLogInFail', () => {
