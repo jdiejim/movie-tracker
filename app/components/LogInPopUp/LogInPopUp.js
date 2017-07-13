@@ -21,24 +21,28 @@ class LogInPopUp extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { type, signUp } = this.props;
+    const { type, signUp, logIn } = this.props;
+    if (type === 'signup') {
+      signUp(JSON.stringify(this.state))
+    } else {
+      logIn(JSON.stringify(this.state))
+    }
 
-    signUp(JSON.stringify(this.state));
     this.props.history.push('/');
   }
 
   render() {
     const { type, signUp } = this.props;
-    const nameInput = type === 'signup' ? <input onChange={this.handleChange} type="text" name="name" placeholder="Enter name" /> : '';
+    const nameInput = type === 'signup' ? <input onChange={ this.handleChange } type="text" name="name" placeholder="Enter name" /> : '';
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>{type}</h1>
-        {nameInput}
-        <input onChange={this.handleChange} type="text" name="email" placeholder="Enter email" />
-        <input onChange={this.handleChange} type="text" name="password" placeholder="Enter password" />
+      <form onSubmit={ this.handleSubmit }>
+        <h1>{ type }</h1>
+        { nameInput }
+        <input onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" />
+        <input onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" />
 
-        <button type="submit">{type}</button>
+        <button type="submit">{ type }</button>
       </form>
     )
   }
