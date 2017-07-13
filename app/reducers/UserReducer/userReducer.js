@@ -1,11 +1,21 @@
-const userReducer = (state='', action) => {
+export const userReducer = (state={}, action) => {
   switch (action.type) {
     case 'SIGN_UP':
-      return state;
+      return action.body.user;
     case 'LOG_IN':
-      return action.id;
+      return action.body.user;
+
     default:
       return state
   }
 }
-export default userReducer;
+
+export const userFailReducer = (state=false, action) => {
+  switch (action.type) {
+    case 'USER_LOGIN_FAIL':
+      return true
+
+    default:
+      return false
+  }
+}

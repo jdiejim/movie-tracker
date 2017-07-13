@@ -1,7 +1,7 @@
 import { GOTO_MOVIE, MOVIES_FETCH_SUCCESS, MOVIES_ARE_LOADING } from '../utils/constants';
 import Movies from '../model/Movies';
-import createUser from '../model/User';
-import {getNowPlaying} from '../utils/constants'
+import User from '../model/User';
+import { getNowPlaying } from '../utils/constants'
 
 export const goToMovie = (id) => {
   return { type: GOTO_MOVIE, id }
@@ -19,33 +19,26 @@ export const fetchMovies = () => {
   return new Movies().fetchMovies()
 }
 
-// export const signUp = (name, email, password) => {
-//   return {
-//            type: 'SIGN_UP',
-//            user: {name, email, password}
-//          }
-// }
+export const logIn = (body) => {
+  return { type: 'LOG_IN', body }
+}
 
-// export const logIn = (email, password) => {
-//   return {
-//            type: 'LOG_IN',
-//            user: {email, password}
-//          }
-// }
-
-// export const logIn = (id) => {
-//   return { type: 'LOG_IN', id }
-// }
-
-export const signUp = (id) => {
-  console.log(id);
-  return { type: 'SIGN_UP', id }
+export const signUp = (body) => {
+  console.log(body);
+  return { type: 'SIGN_UP', body }
 }
 
 export const userIsLoading = (bool) => {
   return { type: 'USER_IS_LOADING', userLoading: bool }
 }
+export const userLogInFail = (bool) => {
+  return { type: 'USER_LOGIN_FAIL', userFail: bool }
+}
 
 export const createNewUser = (body) => {
-  return createUser(body);
+  return new User().createUser(body)
+}
+
+export const fetchLogInUser = (body) => {
+  return new User().logInUser(body)
 }
