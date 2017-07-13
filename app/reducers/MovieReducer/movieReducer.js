@@ -1,4 +1,4 @@
-import {GOTO_MOVIE} from '../../utils/constants';
+import { GOTO_MOVIE } from '../../utils/constants';
 
 const movieReducer = (state={}, action) => {
   switch (action.type){
