@@ -44,7 +44,7 @@ class LogInPopUp extends Component {
     const nameInput = type === 'signup' ? <input className='popup-input' onChange={ this.handleChange } type="text" name="name" placeholder="Enter name" /> : '';
 
     return (
-      <div id='login' onBlur={this.handleBlur}>
+      <div id='login' >
         <h1 className='popup-title'>{ title }</h1>
         <button className='close-modal' onClick={ this.handleBlur }>close</button>
         <form className='login-popup' onSubmit={ this.handleSubmit }>

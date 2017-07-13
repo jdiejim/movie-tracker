@@ -5,6 +5,7 @@ import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
 import LogInPopUp from '../LogInPopUp/LogInPopUp';
 import { Route } from 'react-router-dom';
+import LogInPopUpContainer from '../../containers/LogInPopUpContainer/LogInPopUpContainer'
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class App extends Component {
       <main className={appClass} >
         <HeaderContainer/>
           <Route path='/signup' render={() => {
+
             return <LogInPopUp {...this.props} type='signup'/>
           }}/>
           <Route path='/login' render={() => {

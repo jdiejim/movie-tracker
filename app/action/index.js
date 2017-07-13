@@ -23,6 +23,10 @@ export const logIn = (body) => {
   return { type: 'LOG_IN', body }
 }
 
+export const logOut = () => {
+  return { type: 'LOG_OUT'}
+}
+
 export const signUp = (body) => {
   console.log(body);
   return { type: 'SIGN_UP', body }
