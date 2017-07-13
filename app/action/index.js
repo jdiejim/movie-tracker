@@ -28,7 +28,6 @@ export const logOut = () => {
 }
 
 export const signUp = (body) => {
-  console.log(body);
   return { type: 'SIGN_UP', body }
 }
 
