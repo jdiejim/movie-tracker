@@ -27,21 +27,25 @@ function signIn(req, res, next) {
   res.status(200)
     .json({
       status: 'success',
-      data: data,
+      user: {
+        name: data.name, email: data.email
+      },
       message: 'Retrieved ONE User'
     });
   })
-  .catch(function (err) {
-    return next(err);
+  .catch(function (err, req) {
+    return next(err)
   });
 }
 
 function createUser(req, res, next) {
   req.body.email = req.body.email.toLowerCase();
-  db.one('insert into users(name, password, email)' + 'values(${name}, ${password}, ${email}) returning id', req.body).then(function(data) {
-    res.status(200).json({ status: 'success', message: "New user created", id: data.id});
+  db.one('insert into users(name, password, email)' + 'values(${name}, ${password}, ${email}) returning *', req.body).then(function(data) {
+    res.status(200).json({ status: 'success', message: "New user created", user: {
+      name: data.name, email: data.email
+    }});
   }).catch(function(err) {
-    res.status(500).json({error: err.detail});
+    res.status(500).json({error: err.detail });
   })
 }
 

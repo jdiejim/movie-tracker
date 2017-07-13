@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { getMovieDetail, getNowPlaying, getImageURL, getUpcoming } from '../../utils/constants';
 import Movies from '../../model/Movies';
-import Header from '../Header/Header'
+import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
+import LogInPopUp from '../LogInPopUp/LogInPopUp';
+import { Route } from 'react-router-dom';
 
 export default class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {
@@ -14,12 +16,19 @@ export default class App extends Component {
   }
 
   render() {
+    const { location: { pathname } } = this.props;
+    const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
     return (
-      <div className="app">
-        <Header/>
-        <h1>Movie Watcher</h1>
+      <main className={appClass} >
+        <HeaderContainer/>
+          <Route path='/signup' render={() => {
+            return <LogInPopUp {...this.props} type='signup'/>
+          }}/>
+          <Route path='/login' render={() => {
+            return <LogInPopUp {...this.props} type='login'/>
+          }}/>
         <MovieListContainer />
-      </div>
+      </main>
     )
   }
 }

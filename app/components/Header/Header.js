@@ -1,15 +1,18 @@
 import React from 'react';
-import CarouselContainer from '../../containers/CarouselContainer/CarouselContainer'
+import { Link } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = (props) => {
+  const username = <h3>usernamehere</h3>
   return(
     <header className="header">
-      <nav>
-        <button>Login</button>
-        <button>Submit</button>
+      <nav className="nav-bar">
+        <h3 className="nav-title">Movie <span>Tracker</span></h3>
+        <div className="nav-link-container">
+          <Link className="nav-link login-link" to="/login">Login</Link>
+          <Link className="nav-link signup-link" to="/signup">Sign Up</Link>
+        </div>
       </nav>
-      <CarouselContainer />
     </header>
   )
 }
