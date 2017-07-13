@@ -1,11 +1,11 @@
-import React              from 'react';
 import { shallow, mount } from 'enzyme';
-import MovieDetail        from './MovieDetail';
-import ReactDOM           from 'react-dom';
 import { Provider }       from 'react-redux';
+import React              from 'react';
+import ReactDOM           from 'react-dom';
 import configureMockStore from 'redux-mock-store';
+import Carousel           from './Carousel';
 
-describe('MovieDetail', () => {
+describe('Carousel', () => {
   it('should', () => {
 
   })
