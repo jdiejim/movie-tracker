@@ -4,7 +4,8 @@ export const userReducer = (state={}, action) => {
       return action.body.user;
     case 'LOG_IN':
       return action.body.user;
-
+    case 'LOG_OUT':
+      return {};
     default:
       return state
   }
@@ -17,5 +18,15 @@ export const userFailReducer = (state=false, action) => {
 
     default:
       return false
+  }
+}
+
+export const addFavoriteReducer = (state=false, action) => {
+  console.log(action);
+  switch (action.type) {
+    case 'ADD_SUCCESS':
+      return true;
+    default:
+      return false;
   }
 }

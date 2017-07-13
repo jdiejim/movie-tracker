@@ -23,6 +23,10 @@ export const logIn = (body) => {
   return { type: 'LOG_IN', body }
 }
 
+export const logOut = () => {
+  return { type: 'LOG_OUT'}
+}
+
 export const signUp = (body) => {
   return { type: 'SIGN_UP', body }
 }
@@ -40,4 +44,12 @@ export const createNewUser = (body) => {
 
 export const fetchLogInUser = (body) => {
   return new User().logInUser(body)
+}
+
+export const addFavoriteSuccess = () => {
+  return { type: 'ADD_SUCCESS' }
+}
+
+export const postFavorite = (movie, user_id) => {
+  return new User().addFavorite(movie, user_id);
 }
