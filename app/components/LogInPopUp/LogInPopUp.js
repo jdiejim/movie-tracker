@@ -41,8 +41,10 @@ class LogInPopUp extends Component {
         <h1 className='popup-title'>{ title }</h1>
         <form className='login-popup' onSubmit={ this.handleSubmit }>
           { nameInput }
-          <input className='popup-input' onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" />
-          <input className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" />
+          <section className="popup-input-wrapper">
+            <input className='popup-input' onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" />
+            <input className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" />
+          </section>
           <button className='popup-login-btn' type="submit">{ title }</button>
         </form>
       </div>

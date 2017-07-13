@@ -16,8 +16,8 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.props.location.pathname)
-    const appClass = this.props.location.pathname === '/login' ? 'bg-blur app' : 'app'
+    const { location: { pathname } } = this.props;
+    const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
     return (
       <div className={appClass} >
         <HeaderContainer/>
