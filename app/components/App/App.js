@@ -16,15 +16,14 @@ export default class App extends Component {
   }
 
   render() {
-    const { signUp } = this.props;
     return (
       <div className="app">
         <HeaderContainer/>
         <Route path='/signup' render={() => {
-          return <LogInPopUp signUp={signUp} type='signup'/>
+          return <LogInPopUp {...this.props} type='signup'/>
         }}/>
         <Route path='/login' render={() => {
-          return <LogInPopUp type='login'/>
+          return <LogInPopUp {...this.props} type='login'/>
         }}/>
         <h1>Movie Watcher</h1>
         <MovieListContainer />
