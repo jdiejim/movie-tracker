@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = (props) => {
-  console.log(props);
   return(
     <header className="header">
       <nav>

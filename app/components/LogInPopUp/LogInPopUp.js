@@ -1,10 +1,10 @@
 import React from 'react'
 
-const LogInPopUp = () => {
+const LogInPopUp = ({ type }) => {
 
   return(
      <div>
-       Hello
+       {type}
      </div>
    )
 }
