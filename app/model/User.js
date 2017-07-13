@@ -20,7 +20,6 @@ class User {
     }
   }
 
-
   logInUser(body) {
     return (dispatch) => {
       dispatch(userIsLoading(true));
