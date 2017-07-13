@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import AppContainer from './containers/AppContainer/AppContainer';
 import { rootReducer, history, routerConnected } from './reducers/RootReducer/rootReducer.js';
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
@@ -18,7 +18,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store} >
     <ConnectedRouter history={history}>
-      <App />
+      <AppContainer />
     </ConnectedRouter>
   </Provider>,
   document.getElementById('main')

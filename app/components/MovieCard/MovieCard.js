@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MovieCard = ({ movie }) => {
-console.log(movie)
 const styles = { backgroundImage: `url(${movie.poster})`}
   return(
     <article className='movie-card'>

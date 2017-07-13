@@ -7,8 +7,8 @@ import LogInPopUp from '../LogInPopUp/LogInPopUp';
 import { Route } from 'react-router-dom';
 
 export default class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentDidMount() {
@@ -16,11 +16,12 @@ export default class App extends Component {
   }
 
   render() {
+    const { signUp } = this.props;
     return (
       <div className="app">
         <HeaderContainer/>
         <Route path='/signup' render={() => {
-          return <LogInPopUp type='signup'/>
+          return <LogInPopUp signUp={signUp} type='signup'/>
         }}/>
         <Route path='/login' render={() => {
           return <LogInPopUp type='login'/>

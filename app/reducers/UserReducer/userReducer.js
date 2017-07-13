@@ -1,10 +1,11 @@
-const userReducer = (state={}, action) => {
+const userReducer = (state='', action) => {
   switch (action.type) {
     case 'SIGN_UP':
       return state;
     case 'LOG_IN':
-      return state;
-    default: return state
+      return action.id;
+    default:
+      return state
   }
 }
 export default userReducer;

@@ -38,10 +38,10 @@ function signIn(req, res, next) {
 
 function createUser(req, res, next) {
   req.body.email = req.body.email.toLowerCase();
-  db.one('insert into users(name, password, email)' + 'values(${name}, ${password}, ${email}) returning id', req.body).then(function(data) {
-    res.status(200).json({ status: 'success', message: "New user created", id: data.id});
+  db.one('insert into users(name, password, email)' + 'values(${name}, ${password}, ${email}) returning *', req.body).then(function(data) {
+    res.status(200).json({ status: 'success', message: "New user created", id: data});
   }).catch(function(err) {
-    res.status(500).json({error: err.detail});
+    res.status(500).json({error: err.detail });
   })
 }
 
