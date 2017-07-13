@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const Header = (props) => {
-  const username = <h3>usernamehere</h3>
-  return(
+  return (
     <header className="header">
       <nav className="nav-bar">
         <h3 className="nav-title">Movie <span>Tracker</span></h3>
