@@ -22,7 +22,7 @@ export default class MovieList extends Component {
   render() {
     let moviesArray;
     let toggleView;
-    const { movies, isLoading, user, postFavorite, favorites, location: { pathname } } = this.props;
+    const { movies, isLoading, user, postFavorite, deleteFavorite, favorites, location: { pathname } } = this.props;
 
     if (isLoading) {
       return <div>loading...</div>
@@ -33,6 +33,7 @@ export default class MovieList extends Component {
       toggleView = <Link to="/">Home</Link>
       moviesArray = favorites.map(movie =>
         <MovieCard
+          deleteFavorite={deleteFavorite}
           key={movie.id}
           movie={movie}
           user={user}
