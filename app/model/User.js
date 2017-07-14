@@ -1,4 +1,5 @@
-import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess } from '../action';
+import Movie from './Movie';
+import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess } from '../action';
 
 class User {
   createUser(body) {
@@ -39,7 +40,6 @@ class User {
     }
   }
 
-
   addFavorite(movie, user_id) {
     return (dispatch) => {
       dispatch(userIsLoading(true))
@@ -56,7 +56,23 @@ class User {
       .then(res => res.json())
       .then(msg => dispatch(addFavoriteSuccess()))
       .catch(err => console.log(err))
+    }
+  }
 
+  fetchFavorites(id) {
+    return (dispatch) => {
+      dispatch(moviesAreLoading(true))
+
+      fetch(`/api/users/${id}/favorites`)
+      .then(res => {
+        dispatch(moviesAreLoading(false))
+        return res;
+      })
+      .then(res => res.json())
+      .then(({ data }) => {
+        const movies = data.map( movie => new Movie(movie))
+        return dispatch(favoritesFetchSuccess(movies))
+      });
     }
   }
 }

@@ -53,3 +53,11 @@ export const addFavoriteSuccess = () => {
 export const postFavorite = (movie, user_id) => {
   return new User().addFavorite(movie, user_id);
 }
+
+export const favoritesFetchSuccess = (movies) => {
+  return { type: 'FAVORITES_FETCH_SUCCESS', movies }
+}
+
+export const fetchFavorites = (id) => {
+  return new User().fetchFavorites(id)
+}

@@ -17,16 +17,24 @@ export const userFailReducer = (state=false, action) => {
       return true
 
     default:
-      return false
+      return state
   }
 }
 
 export const addFavoriteReducer = (state=false, action) => {
-  console.log(action);
   switch (action.type) {
     case 'ADD_SUCCESS':
       return true;
     default:
-      return false;
+      return state;
+  }
+}
+
+export const favoritesReducer = (state=[], action) => {
+  switch (action.type) {
+    case 'FAVORITES_FETCH_SUCCESS':
+      return [...state, ...action.movies];
+    default:
+      return state;
   }
 }
