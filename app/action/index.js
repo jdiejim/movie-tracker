@@ -61,3 +61,11 @@ export const favoritesFetchSuccess = (movies) => {
 export const fetchFavorites = (id) => {
   return new User().fetchFavorites(id)
 }
+
+export const deleteFavoriteSuccess = (movie_id) => {
+  return { type: 'DELETE_FAVORITES_SUCCESS', movie_id }
+}
+
+export const deleteFavorite = (movie_id, user_id) => {
+  return new User().deleteFavorite(movie_id, user_id)
+}

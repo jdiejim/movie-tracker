@@ -1,5 +1,5 @@
 import Movie from './Movie';
-import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess } from '../action';
+import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess, deleteFavoriteSuccess } from '../action';
 
 class User {
   createUser(body) {
@@ -43,6 +43,7 @@ class User {
   addFavorite(movie, user_id) {
     return (dispatch) => {
       dispatch(userIsLoading(true))
+      console.log(movie);
 
       fetch('/api/users/favorites/new', {
         method: 'POST',
@@ -73,6 +74,23 @@ class User {
         const movies = data.map( movie => new Movie(movie))
         return dispatch(favoritesFetchSuccess(movies))
       });
+    }
+  }
+
+  deleteFavorite(movie_id, user_id) {
+    return (dispatch) => {
+      dispatch(userIsLoading(true))
+
+      fetch(`/api/users/${user_id}/favorites/${movie_id}`, {
+        method: 'DELETE',
+      })
+      .then(res => {
+        dispatch(userIsLoading(false))
+        return res;
+      })
+      .then(res => res.json())
+      .then(msg => dispatch(deleteFavoriteSuccess(movie_id)))
+      .catch(err => console.log(err))
     }
   }
 }
