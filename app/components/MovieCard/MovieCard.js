@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getImageURL } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 
 export default class MovieCard extends Component {
@@ -9,8 +10,7 @@ export default class MovieCard extends Component {
 
   render() {
     const { movie, user, postFavorite } = this.props;
-    const styles = { backgroundImage: `url(${movie.poster_path})`}
-    console.log(user.id);
+    const styles = { backgroundImage: `url(${getImageURL(movie.poster_path)})`}
     return(
       <article className='movie-card'>
         {

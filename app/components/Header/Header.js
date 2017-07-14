@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-console.log(props);
   const navLinks = Object.keys(props.user).length ?
       <button onClick={() => props.logOut()}>Logout</button> :
      (<div className="nav-link-container">
@@ -11,7 +10,6 @@ console.log(props);
             </div>
           )
 
-  const username = <h3>usernamehere</h3>
   return (
     <header className="header">
       <nav className="nav-bar">

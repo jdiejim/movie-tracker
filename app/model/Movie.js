@@ -6,8 +6,8 @@ class Movie {
     this.title = title;
     this.overview = overview;
     this.release_date = release_date;
-    this.poster_path = getImageURL(poster_path);
-    this.backdrop_path = getImageURL(backdrop_path);
+    this.poster_path = poster_path;
+    this.backdrop_path = backdrop_path;
     this.vote_average = vote_average;
   }
 }

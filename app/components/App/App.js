@@ -23,13 +23,13 @@ export default class App extends Component {
       <main className={appClass} >
         <HeaderContainer/>
           <Route path='/signup' render={() => {
-
             return <LogInPopUp {...this.props} type='signup'/>
           }}/>
           <Route path='/login' render={() => {
             return <LogInPopUp {...this.props} type='login'/>
           }}/>
-        <MovieListContainer />
+          <Route path='/' component={MovieListContainer} />
+          <Route path='/favorites' component={MovieListContainer} />
       </main>
     )
   }

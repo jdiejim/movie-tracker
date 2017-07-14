@@ -1,43 +1,58 @@
 import React, { Component } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
+import { Link } from 'react-router-dom';
 
 export default class MovieList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userLoaded: false,
-    }
+  constructor() {
+    super();
   }
 
   componentDidMount(){
-    this.props.fetchMovies();
+    const { user: { id }, location: { pathname} } = this.props;
+
+    switch (pathname) {
+      case '/favorites':
+        this.props.fetchFavorites(id);
+        break;
+      default:
+        this.props.fetchMovies();
+    }
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log(nextProps);
-  //
-  //   if (this.props.user !== nextProps.user) {
-  //     this.setState({ userLoaded: !this.state.userLoaded })
-  //   }
-  // }
-
   render() {
-    const { movies, isLoading, user, postFavorite } = this.props;
+    let moviesArray;
+    let toggleView;
+    const { movies, isLoading, user, postFavorite, favorites, location: { pathname } } = this.props;
 
     if (isLoading) {
       return <div>loading...</div>
     }
 
-    const moviesArray = movies.map(movie =>
-      <MovieCard
-        key={movie.id}
-        movie={movie}
-        user={user}
-        postFavorite={postFavorite}
-      />);
+    switch (pathname) {
+      case '/favorites':
+      toggleView = <Link to="/">Home</Link>
+      moviesArray = favorites.map(movie =>
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          user={user}
+          postFavorite={postFavorite}
+        />);
+        break;
+      default:
+      toggleView = <Link to="/favorites">Favorites</Link>
+      moviesArray = movies.map(movie =>
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          user={user}
+          postFavorite={postFavorite}
+        />);
+    }
 
     return (
       <section className='movie-list'>
+        {toggleView}
         {moviesArray}
       </section>
     )
