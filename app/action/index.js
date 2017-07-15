@@ -13,6 +13,10 @@ export const moviesAreLoading = (bool) => {
   return { type: MOVIES_ARE_LOADING, isLoading: bool }
 }
 
+export const detailLoading = (bool) => {
+  return { type: 'DETAIL_IS_LOADING', isLoading: bool }
+}
+
 export const fetchMovieDetail = () => {
   return new FetchCalls().fetchMovieDetail()
 }

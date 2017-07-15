@@ -230,7 +230,6 @@ html {
   margin: 20px 0;
 }
 
-
 .detail {
   display: grid;
   grid-template-rows: 100%;
@@ -240,7 +239,15 @@ html {
   background-color: #e6e6e6;
 }
 
+.detail-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+}
 
-.detail-poster {
-  
+.detail-poster,
+.detail-title {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

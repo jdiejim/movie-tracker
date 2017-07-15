@@ -1,4 +1,4 @@
-const movieReducer = (state={}, action) => {
+export const movieReducer = (state={}, action) => {
   switch (action.type){
     case 'DETAIL_FETCH_SUCCESS':
       return action.movie;
@@ -7,4 +7,11 @@ const movieReducer = (state={}, action) => {
   }
 }
 
-export default movieReducer;
+export const detailLoadingReducer = (state=false, action) => {
+  switch (action.type) {
+    case 'DETAIL_IS_LOADING':
+      return true;
+    default:
+      return false;
+  }
+}

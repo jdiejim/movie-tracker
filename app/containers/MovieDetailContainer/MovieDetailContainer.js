@@ -5,6 +5,7 @@ import { fetchMovieDetail } from '../../action';
 const mapStateToProps = (state) => {
   return {
     movie: state.movieDetail,
+    detailLoading: state.detailLoading
   }
 }
 

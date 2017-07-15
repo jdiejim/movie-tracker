@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import  movieReducer from '../MovieReducer/movieReducer';
+import  { movieReducer, detailLoadingReducer } from '../MovieReducer/movieReducer';
 import  { userReducer, userFailReducer, addFavoriteReducer, favoritesReducer } from '../UserReducer/userReducer';
 import { moviesSuccessReducer, moviesAreLoadingReducer } from '../MoviesReducer/moviesReducer';
 
@@ -14,6 +14,7 @@ export const rootReducer = combineReducers({
   movies: moviesSuccessReducer,
   favorites: favoritesReducer,
   isLoading: moviesAreLoadingReducer,
+  detailLoading: detailLoadingReducer,
   user: userReducer,
   userFail: userFailReducer,
   addFavoriteSuccess: addFavoriteReducer
