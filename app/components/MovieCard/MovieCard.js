@@ -8,22 +8,25 @@ export default class MovieCard extends Component {
   }
 
   render() {
-    const { movie, user, postFavorite, deleteFavorite } = this.props;
+    const { movie, user, postFavorite, deleteFavorite, goToMovie } = this.props;
     const deleteBtn = deleteFavorite ? <button onClick={() => deleteFavorite(movie.movie_id, user.id)}>delete</button> : ''
     const styles = { backgroundImage: `url(${getImageURL(movie.poster_path)})`}
-    return(
-      <article className='movie-card'>
-        {
-          Object.keys(user).length ?
-          <button onClick={() => postFavorite(movie, user.id)} className='save-btn'>Save</button> :
-          <Link to='/login' className='save-btn'>Save</Link>
-        }
-        <div className='sub-card' style={ styles }></div>
-        <div className='movie-info'>
-          Title
-        </div>
-        {deleteBtn}
-      </article>
+    return (
+      <Link to='/detail'>
+
+        <article className='movie-card' onClick={() => goToMovie(movie.movie_id)}>
+          {
+            Object.keys(user).length ?
+            <button onClick={() => postFavorite(movie, user.id)} className='save-btn'>Save</button> :
+            <Link to='/login' className='save-btn'>Save</Link>
+          }
+          <div className='sub-card' style={ styles }></div>
+          <div className='movie-info'>
+            Title
+          </div>
+          {deleteBtn}
+        </article>
+      </Link>
     )
   }
 }

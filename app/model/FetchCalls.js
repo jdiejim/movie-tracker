@@ -11,7 +11,7 @@ import { signUp,
          detailLoading,
        } from '../action';
 import Movie from './Movie'
-import { getNowPlaying } from '../utils/constants'
+import { getNowPlaying, getMovieDetail } from '../utils/constants'
 
 export default class FetchCalls {
   fetchMovies() {
@@ -31,11 +31,9 @@ export default class FetchCalls {
     }
   }
 
-  fetchMovieDetail(){
-    const url = 'https://api.themoviedb.org/3/movie/324852?api_key=2ae6a8b4b262c8524d3891f78c53c7d4&language=en-US';
+  fetchMovieDetail(id){
     return (dispatch) => {
       dispatch(detailLoading(true))
-
       fetch(getMovieDetail(id))
         .then(res => {
           dispatch(detailLoading(false))
@@ -43,7 +41,7 @@ export default class FetchCalls {
         })
         .then(res => res.json())
         .then(data => dispatch(detailFetchSuccess(data)))
-
+        .catch(err => console.log(err))
     }
   }
 

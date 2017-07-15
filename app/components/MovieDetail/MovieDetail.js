@@ -10,11 +10,11 @@ export default class MovieDetail extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchMovieDetail()
+    const { movieId, fetchMovieDetail } = this.props;
+    fetchMovieDetail(movieId)
   }
 
   render() {
-    // console.log(this.props);
     if (this.props.detailLoading) {
       return <div>loading...</div>
     }

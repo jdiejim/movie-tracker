@@ -17,8 +17,8 @@ export const detailLoading = (bool) => {
   return { type: 'DETAIL_IS_LOADING', isLoading: bool }
 }
 
-export const fetchMovieDetail = () => {
-  return new FetchCalls().fetchMovieDetail()
+export const fetchMovieDetail = (movieId) => {
+  return new FetchCalls().fetchMovieDetail(movieId)
 }
 
 export const detailFetchSuccess = (movie) => {

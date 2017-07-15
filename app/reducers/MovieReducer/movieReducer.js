@@ -15,3 +15,13 @@ export const detailLoadingReducer = (state=false, action) => {
       return false;
   }
 }
+
+export const goToMovieReducer = (state='', action) => {
+  console.log(state);
+  switch (action.type) {
+    case 'GOTO_MOVIE':
+      return action.id
+    default:
+      return state;
+  }
+}

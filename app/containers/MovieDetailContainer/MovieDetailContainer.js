@@ -5,14 +5,15 @@ import { fetchMovieDetail } from '../../action';
 const mapStateToProps = (state) => {
   return {
     movie: state.movieDetail,
-    detailLoading: state.detailLoading
+    detailLoading: state.detailLoading,
+    movieId: state.movieId,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
    return {
-     fetchMovieDetail: () => dispatch(fetchMovieDetail()),
+     fetchMovieDetail: (movieId) => dispatch(fetchMovieDetail(movieId)),
    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail);
