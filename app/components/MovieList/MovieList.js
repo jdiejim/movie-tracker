@@ -23,7 +23,7 @@ export default class MovieList extends Component {
     console.log('looking for pathname :', this.props )
     let moviesArray;
     let toggleView;
-    const { movies, isLoading, user, postFavorite, deleteFavorite, favorites, location: { pathname } } = this.props;
+    const { movies, isLoading, goToMovie, user, postFavorite, deleteFavorite, favorites, location: { pathname } } = this.props;
 
     if (isLoading) {
       return <div>loading...</div>
@@ -39,6 +39,7 @@ export default class MovieList extends Component {
           movie={movie}
           user={user}
           postFavorite={postFavorite}
+          goToMovie={goToMovie}
         />);
         break;
       default:
@@ -50,6 +51,7 @@ export default class MovieList extends Component {
           movie={movie}
           user={user}
           postFavorite={postFavorite}
+          goToMovie={goToMovie}
         />);
     }
 
