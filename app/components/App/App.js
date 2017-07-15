@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getMovieDetail, getNowPlaying, getImageURL, getUpcoming } from '../../utils/constants';
-import Movies from '../../model/Movies';
 import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
 import LogInPopUp from '../LogInPopUp/LogInPopUp';
@@ -28,8 +27,8 @@ export default class App extends Component {
           <Route path='/login' render={() => {
             return <LogInPopUp {...this.props} type='login'/>
           }}/>
-          <Route path='/' component={MovieListContainer} />
-          <Route path='/favorites' component={MovieListContainer} />
+          <Route exact path='/' component={MovieListContainer} />
+          <Route exact path='/favorites' component={MovieListContainer} />
       </main>
     )
   }

@@ -1,7 +1,39 @@
-import Movie from './Movie';
-import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess } from '../action';
+import { signUp,
+         logIn,
+         userIsLoading,
+         userLogInFail,
+         addFavoriteSuccess,
+         moviesAreLoading,
+         favoritesFetchSuccess,
+         deleteFavoriteSuccess,
+         movieFetchSuccess,
+       } from '../action';
+import Movie from './Movie'
+import { getNowPlaying } from '../utils/constants'
 
-class User {
+export default class FetchCalls {
+  fetchMovies() {
+    return (dispatch) => {
+      dispatch(moviesAreLoading(true))
+
+      fetch(getNowPlaying(1))
+      .then(res => {
+        dispatch(moviesAreLoading(false))
+        return res;
+      })
+      .then(res => res.json())
+      .then(({ results }) => {
+        const movies = results.map( movie => new Movie(movie))
+        return dispatch(movieFetchSuccess(movies))
+      });
+    }
+  }
+
+  fetchMovieDetail(){
+
+  }
+
+
   createUser(body) {
     return (dispatch) => {
       dispatch(userIsLoading(true));
@@ -44,6 +76,7 @@ class User {
     return (dispatch) => {
       dispatch(userIsLoading(true))
 
+
       fetch('/api/users/favorites/new', {
         method: 'POST',
         body: JSON.stringify(Object.assign({}, movie, {user_id})),
@@ -75,6 +108,21 @@ class User {
       });
     }
   }
-}
 
-export default User;
+  deleteFavorite(movie_id, user_id) {
+    return (dispatch) => {
+      dispatch(userIsLoading(true))
+
+      fetch(`/api/users/${user_id}/favorites/${movie_id}`, {
+        method: 'DELETE',
+      })
+      .then(res => {
+        dispatch(userIsLoading(false))
+        return res;
+      })
+      .then(res => res.json())
+      .then(msg => dispatch(deleteFavoriteSuccess(movie_id)))
+      .catch(err => console.log(err))
+    }
+  }
+}
