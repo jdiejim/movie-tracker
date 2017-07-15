@@ -1,5 +1,13 @@
-import Movie from './Movie';
-import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess, deleteFavoriteSuccess, movieFetchSuccess } from '../action';
+import { signUp,
+         logIn,
+         userIsLoading,
+         userLogInFail,
+         addFavoriteSuccess,
+         moviesAreLoading,
+         favoritesFetchSuccess,
+         deleteFavoriteSuccess,
+         movieFetchSuccess,
+       } from '../action';
 import { getNowPlaying } from '../utils/constants'
 
 export default class FetchCalls {
@@ -19,6 +27,11 @@ export default class FetchCalls {
       });
     }
   }
+
+  fetchMovieDetail(){
+
+  }
+
 
   createUser(body) {
     return (dispatch) => {
