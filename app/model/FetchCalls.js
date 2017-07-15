@@ -7,6 +7,7 @@ import { signUp,
          favoritesFetchSuccess,
          deleteFavoriteSuccess,
          movieFetchSuccess,
+         detailFetchSuccess,
        } from '../action';
 import Movie from './Movie'
 import { getNowPlaying } from '../utils/constants'
@@ -30,7 +31,19 @@ export default class FetchCalls {
   }
 
   fetchMovieDetail(){
+    const url = 'https://api.themoviedb.org/3/movie/324852?api_key=2ae6a8b4b262c8524d3891f78c53c7d4&language=en-US';
+    return (dispatch) => {
+      dispatch(moviesAreLoading(true))
 
+      fetch(url)
+        .then(res => {
+          dispatch(moviesAreLoading(false))
+          return res;
+        })
+        .then(res => res.json())
+        .then(data => dispatch(detailFetchSuccess(data)))
+
+    }
   }
 
 

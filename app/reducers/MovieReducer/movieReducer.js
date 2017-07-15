@@ -1,10 +1,9 @@
-import { GOTO_MOVIE } from '../../utils/constants';
-
 const movieReducer = (state={}, action) => {
   switch (action.type){
-    case GOTO_MOVIE:
-     return state;
-    default: return state;
+    case 'DETAIL_FETCH_SUCCESS':
+      return action.movie;
+    default:
+      return state;
   }
 }
 

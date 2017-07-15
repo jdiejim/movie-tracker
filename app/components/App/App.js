@@ -4,7 +4,8 @@ import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
 import LogInPopUp from '../LogInPopUp/LogInPopUp';
 import { Route } from 'react-router-dom';
-import LogInPopUpContainer from '../../containers/LogInPopUpContainer/LogInPopUpContainer'
+import LogInPopUpContainer from '../../containers/LogInPopUpContainer/LogInPopUpContainer';
+import MovieDetailContainer from '../../containers/MovieDetailContainer/MovieDetailContainer';
 
 export default class App extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export default class App extends Component {
           }}/>
           <Route exact path='/' component={MovieListContainer} />
           <Route exact path='/favorites' component={MovieListContainer} />
+          <Route path='/detail' component={MovieDetailContainer} />
       </main>
     )
   }
