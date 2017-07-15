@@ -34,7 +34,7 @@ export default class MovieList extends Component {
       moviesArray = favorites.map(movie =>
         <MovieCard
           deleteFavorite={deleteFavorite}
-          key={movie.id}
+          key={movie.movie_id}
           movie={movie}
           user={user}
           postFavorite={postFavorite}
@@ -45,7 +45,7 @@ export default class MovieList extends Component {
       toggleView = <Link to="/favorites">Favorites</Link>
       moviesArray = movies.map(movie =>
         <MovieCard
-          key={movie.id}
+          key={movie.movie_id}
           movie={movie}
           user={user}
           postFavorite={postFavorite}

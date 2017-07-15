@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
-import { createNewUser, fetchLogInUser } from '../../action';
+import { createNewUser, fetchLogInUser, userLogInSuccess } from '../../action';
 import App from '../../components/App/App';
 
 const mapStateToProps = (state) => {
   return {
-    movies: state.movies
+    movies: state.movies,
+    userFail: state.userFail,
+    user: state.user
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     signUp: (body) => dispatch(createNewUser(body)),
-    logIn: (body) => dispatch(fetchLogInUser(body))
+    logIn: (body) => dispatch(fetchLogInUser(body)),
+    userLogInSuccess: (bool) => dispatch(userLogInSuccess(bool))
   }
 }
 
