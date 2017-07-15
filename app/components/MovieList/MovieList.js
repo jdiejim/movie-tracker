@@ -8,7 +8,7 @@ export default class MovieList extends Component {
   }
 
   componentDidMount(){
-    const { user: { id }, location: { pathname} } = this.props;
+    const { user: { id }, location: { pathname } } = this.props;
 
     switch (pathname) {
       case '/favorites':
@@ -20,6 +20,7 @@ export default class MovieList extends Component {
   }
 
   render() {
+    console.log('looking for pathname :', this.props )
     let moviesArray;
     let toggleView;
     const { movies, isLoading, user, postFavorite, deleteFavorite, favorites, location: { pathname } } = this.props;
@@ -42,6 +43,7 @@ export default class MovieList extends Component {
         break;
       default:
       toggleView = <Link to="/favorites">Favorites</Link>
+      console.log(movies)
       moviesArray = movies.map(movie =>
         <MovieCard
           key={movie.id}
