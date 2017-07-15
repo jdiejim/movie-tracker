@@ -9,7 +9,7 @@ import LogInPopUpContainer from '../../containers/LogInPopUpContainer/LogInPopUp
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
