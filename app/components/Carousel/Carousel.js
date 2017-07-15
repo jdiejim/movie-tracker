@@ -26,11 +26,19 @@ class Carousel extends Component {
   componentDidMount() {
     const intervalID = setInterval(this.timer, 4000);
 
+    window.addEventListener('animationend',this.removeInfoAnimation);
     this.setState({ intervalID });
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
+
     clearInterval(this.state.intervalID);
+    window.removeEventListener('animationend', this.removeInfoAnimation);
+  }
+
+  removeInfoAnimation() {
+
+    document.body.classList.remove('carousel-anim');
   }
 
   timer() {
@@ -43,6 +51,7 @@ class Carousel extends Component {
     }
 
     this.setState({ position });
+    document.body.classList.add('carousel-anim');
   }
 
   handlePoster(e) {
@@ -50,6 +59,7 @@ class Carousel extends Component {
     const position = +e.target.value;
 
     this.setState({ position });
+    document.body.classList.add('carousel-anim');
   }
 
   render() {

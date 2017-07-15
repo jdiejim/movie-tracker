@@ -232,6 +232,7 @@ body {
   display: grid;
   grid-template: 100% / 3fr 2fr;
   height: 350px;
+  background-color: black;
 }
 
 .carousel-info-wrapper {
@@ -263,8 +264,10 @@ body {
   justify-content: center;
   grid-template: 1fr 20px 20px / 30px 30px 30px;
   background-repeat: no-repeat;
-  background-position: 50% 0%;
-  background-size: 100%;
+  background-position: center;
+  background-size: contain;
+  /*background-position: 50% 0%;*/
+  /*background-size: 100%;*/
 }
 
 .poster-selector {
@@ -283,4 +286,18 @@ body {
 
 .selector-active {
   background-color: #FFF;
+}
+
+@keyframes carouselInfo {
+  from { transform: translateX(100%); opacity: 0 }
+  to { transform: translateX(0); opacity: 1 }
+
+}
+
+.carousel-anim .carousel-info-wrapper {
+  animation: carouselInfo 0.5s;
+}
+
+.carousel-anim .backdrop-poster {
+  animation: carouselInfo 0.5s;
 }
