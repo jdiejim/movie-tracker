@@ -1,7 +1,25 @@
 import Movie from './Movie';
-import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess, deleteFavoriteSuccess } from '../action';
+import { signUp, logIn, userIsLoading, userLogInFail, addFavoriteSuccess, moviesAreLoading, favoritesFetchSuccess, deleteFavoriteSuccess, movieFetchSuccess } from '../action';
+import { getNowPlaying } from '../utils/constants'
 
-class User {
+export default class FetchCalls {
+  fetchMovies() {
+    return (dispatch) => {
+      dispatch(moviesAreLoading(true))
+
+      fetch(getNowPlaying(1))
+      .then(res => {
+        dispatch(moviesAreLoading(false))
+        return res;
+      })
+      .then(res => res.json())
+      .then(({ results }) => {
+        const movies = results.map( movie => new Movie(movie))
+        return dispatch(movieFetchSuccess(movies))
+      });
+    }
+  }
+
   createUser(body) {
     return (dispatch) => {
       dispatch(userIsLoading(true));
@@ -94,5 +112,3 @@ class User {
     }
   }
 }
-
-export default User;

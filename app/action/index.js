@@ -1,7 +1,5 @@
 import { GOTO_MOVIE, MOVIES_FETCH_SUCCESS, MOVIES_ARE_LOADING } from '../utils/constants';
-import Movies from '../model/Movies';
-import User from '../model/User';
-import { getNowPlaying } from '../utils/constants'
+import FetchCalls from '../model/FetchCalls';
 
 export const goToMovie = (id) => {
   return { type: GOTO_MOVIE, id }
@@ -16,7 +14,7 @@ export const moviesAreLoading = (bool) => {
 }
 
 export const fetchMovies = () => {
-  return new Movies().fetchMovies()
+  return new FetchCalls().fetchMovies()
 }
 
 export const logIn = (body) => {
@@ -39,11 +37,11 @@ export const userLogInFail = (bool) => {
 }
 
 export const createNewUser = (body) => {
-  return new User().createUser(body)
+  return new FetchCalls().createUser(body)
 }
 
 export const fetchLogInUser = (body) => {
-  return new User().logInUser(body)
+  return new FetchCalls().logInUser(body)
 }
 
 export const addFavoriteSuccess = () => {
@@ -51,7 +49,7 @@ export const addFavoriteSuccess = () => {
 }
 
 export const postFavorite = (movie, user_id) => {
-  return new User().addFavorite(movie, user_id);
+  return new FetchCalls().addFavorite(movie, user_id);
 }
 
 export const favoritesFetchSuccess = (movies) => {
@@ -59,7 +57,7 @@ export const favoritesFetchSuccess = (movies) => {
 }
 
 export const fetchFavorites = (id) => {
-  return new User().fetchFavorites(id)
+  return new FetchCalls().fetchFavorites(id)
 }
 
 export const deleteFavoriteSuccess = (movie_id) => {
@@ -67,5 +65,5 @@ export const deleteFavoriteSuccess = (movie_id) => {
 }
 
 export const deleteFavorite = (movie_id, user_id) => {
-  return new User().deleteFavorite(movie_id, user_id)
+  return new FetchCalls().deleteFavorite(movie_id, user_id)
 }
