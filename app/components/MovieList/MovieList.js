@@ -8,7 +8,7 @@ export default class MovieList extends Component {
   }
 
   componentDidMount(){
-    const { user: { id }, location: { pathname} } = this.props;
+    const { user: { id }, location: { pathname } } = this.props;
 
     switch (pathname) {
       case '/favorites':

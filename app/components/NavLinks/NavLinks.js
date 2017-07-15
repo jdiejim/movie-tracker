@@ -1,6 +1,7 @@
 import React from 'react';
 
 const NavLinks = (props) => {
+  console.log(props)
   return Object.keys(props.user).length ?
     <button>Logout</button> :
     (<div className="nav-link-container">

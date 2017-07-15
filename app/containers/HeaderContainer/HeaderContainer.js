@@ -1,6 +1,6 @@
-import { connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
-import {signUp, logIn, logOut } from '../../action'
+import { signUp, logIn, logOut } from '../../action'
 
 const mapStateToProps = (state) => {
   return {movies: state.movies,

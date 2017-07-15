@@ -9,7 +9,7 @@ import MovieDetailContainer from '../../containers/MovieDetailContainer/MovieDet
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {

@@ -100,7 +100,7 @@ export default class FetchCalls {
   addFavorite(movie, user_id) {
     return (dispatch) => {
       dispatch(userIsLoading(true))
-      console.log(movie);
+
 
       fetch('/api/users/favorites/new', {
         method: 'POST',
