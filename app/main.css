@@ -250,4 +250,77 @@ html {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+
+.carousel {
+  display: grid;
+  grid-template: 100% / 3fr 2fr;
+  height: 350px;
+  background-color: black;
+}
+
+.carousel-info-wrapper {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr;
+  background-color: #000;
+  color: #FFF;
+}
+
+.carousel-title {
+  padding: 10px 20px;
+  font-weight: lighter;
+}
+
+.carousel-year {
+
+}
+
+.carousel-overview {
+  height: 200px;
+  padding: 0 20px;
+  font-weight: lighter;
+  line-height: 25px;
+  overflow: scroll;
+}
+
+.backdrop-poster {
+  display: grid;
+  justify-content: center;
+  grid-template: 1fr 20px 20px / 30px 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /*background-position: 50% 0%;*/
+  /*background-size: 100%;*/
+}
+
+.poster-selector {
+  grid-row-start: 2;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.poster-selector:focus {
+  outline: none;
+}
+
+.selector-active {
+  background-color: #FFF;
+}
+
+@keyframes carouselInfo {
+  from { transform: translateX(100%); opacity: 0 }
+  to { transform: translateX(0); opacity: 1 }
+
+}
+
+.carousel-anim .carousel-info-wrapper {
+  animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
+}
+
+.carousel-anim .backdrop-poster {
+  animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
 }
