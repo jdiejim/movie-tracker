@@ -1,21 +1,22 @@
-import MovieListContainer from './MovieListContainer';
-import MovieList          from '../../components/MovieList/MovieList';
-import * as actions       from '../../action';
-import { movieDataStub }  from './stubs';
-import { API_KEY }        from '../../utils/api_key'
+import MovieListContainer       from './MovieListContainer';
+import { API_KEY }              from '../../utils/api_key'
+import { movieDataStub, user }  from './stubs';
+import AppContainer             from '../AppContainer/AppContainer'
 
-import React              from 'react';
-import ReactDOM           from 'react-dom';
-import { shallow, mount } from 'enzyme';
-import { Provider }       from 'react-redux';
-import configureMockStore from 'redux-mock-store';
-import { Route }          from 'react-router-dom'
-import fetchMock          from 'fetch-mock'
-import { ConnectedRouter } from 'react-router-redux';
-import createHistory       from 'history/createBrowserHistory';
+import React                    from 'react';
+import { mount }                from 'enzyme';
+import { Provider }             from 'react-redux';
+import { Route }                from 'react-router-dom'
+import { ConnectedRouter }      from 'react-router-redux';
+import configureMockStore       from 'redux-mock-store';
+import fetchMock                from 'fetch-mock'
+import createHistory            from 'history/createBrowserHistory';
+import thunk                    from 'redux-thunk';
 
-const history   = createHistory()
-const store     = configureMockStore()({movies: 'a string'})
+
+const history = createHistory()
+const store   = configureMockStore([thunk])({movies:movieDataStub.results, user:user})
+
 
 describe('MovieListContainer', () => {
 
@@ -40,20 +41,18 @@ describe('MovieListContainer', () => {
   }
 
 
-  it('should', async () => {
-
+  it('should mount', () => {
     const wrapper = mount(
-          <Provider store={ store } >
-            <ConnectedRouter history={ history } >
-              <Route to='/' history={history} component={MovieListContainer}/>
+          <Provider store={store} >
+            <ConnectedRouter history={history} >
+              <Route to='' history={history} component={MovieListContainer}/>
             </ConnectedRouter>
           </Provider>
     )
 
+    // await resolveAfter2Seconds()
 
-
-    await resolveAfter2Seconds()
-
+    expect(wrapper.find('.movie-list').length).toEqual(1)
   })
 
 

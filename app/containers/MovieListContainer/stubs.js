@@ -43,3 +43,12 @@ export const movieDataStub = {
     },
   ]
 }
+
+export const user = {
+                      "id": 1,
+                      "name": "Taylor",
+                      "password": "password",
+                      "email": "tman2272@aol.com"
+                    }
+                    
+export const mockStore = {movie: movieDataStub, user: user}
