@@ -22,7 +22,6 @@ export default class App extends Component {
     return (
       <main className={appClass} >
         <HeaderContainer/>
-          <Switch>
             <Route path='/signup' render={() => {
               return <LogInPopUp {...this.props} type='signup'/>
             }}/>
@@ -30,13 +29,12 @@ export default class App extends Component {
               return <LogInPopUp {...this.props} type='login'/>
             }}/>
             <Route path='/favorites' component={MovieListContainer} />
-            {/* <Route path='/detail/:id' component={MovieDetailContainer} /> */}
-            <Route path='/detail/:id' render={(props) => {
+            <Route path='/detail/:id' component={MovieDetailContainer} />
+            {/* <Route path='/detail/:id' render={(props) => {
               console.log(props)
               return <MovieListContainer {...props}/>
-            }} />
+            }} /> */}
             <Route exact path='/' component={MovieListContainer} />
-          </Switch>
       </main>
     )
   }
