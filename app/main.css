@@ -295,9 +295,9 @@ body {
 }
 
 .carousel-anim .carousel-info-wrapper {
-  animation: carouselInfo 0.5s;
+  animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
 }
 
 .carousel-anim .backdrop-poster {
-  animation: carouselInfo 0.5s;
+  animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
 }
