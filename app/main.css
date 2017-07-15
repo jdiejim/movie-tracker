@@ -21,6 +21,12 @@ html {
   font-family: 'Avenir Next', sans-serif;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 #main h1 {
   margin: 0;
 }
@@ -64,20 +70,43 @@ html {
 
 .nav-link:hover {
   background-color: #E54F92;
+  border-color: #E54F92;
 }
 
 .nav-link:visited {
   color: #fff;
 }
 
+.toggle-link {
+  grid-column: span begin/end;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(45, 45, 45);
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(45, 45, 45);
+  background-color: rgba(45, 45, 45, 0.25);
+}
+
+.toggle-link:hover {
+  background-color: #07A4F5;
+  border-color: #07A4F5;
+  color: #fff;
+}
+
+.movie-list-container {
+  background-color: #e6e6e6;
+  width: 100%;
+}
 
 .movie-list {
-  background-color: #e6e6e6;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 33% 33% 33%;
-  width: 100%;
-  padding: 50px 0 0;
+  /*grid-template-rows: 50% 50%;*/
+  grid-auto-rows: 100%;
+  padding: 10px 0 0;
 }
 
 .movie-card {

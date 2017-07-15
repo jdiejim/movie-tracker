@@ -16,7 +16,8 @@ export default class MovieCard extends Component {
       <Link to={`/detail/${movie_id}`}>
         <div className='sub-card' style={ styles }></div>
         <div className='movie-info'>
-          Title
+          <h1>{movie.title}</h1>
+          <p>{movie.overview}</p>
         </div>
       </Link>
       {deleteBtn}
