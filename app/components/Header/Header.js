@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CarouselContainer from '../../containers/CarouselContainer/CarouselContainer';
 
 const Header = (props) => {
   const navLinks = Object.keys(props.user).length ?
@@ -16,6 +17,7 @@ const Header = (props) => {
         <h3 className="nav-title">Movie <span>Tracker</span></h3>
         {navLinks}
       </nav>
+      <CarouselContainer />
     </header>
   )
 }

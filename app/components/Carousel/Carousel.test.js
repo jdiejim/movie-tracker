@@ -7,11 +7,9 @@ import configureMockStore from 'redux-mock-store';
 
 
 describe('Carousel', () => {
-  it('should', () => {
+  it('should render the correct component when it mounts', () => {
 
-  })
+  });
 
-  it('should', () => {
 
-  })
-})
+});
