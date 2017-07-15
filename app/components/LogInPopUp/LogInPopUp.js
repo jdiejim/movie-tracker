@@ -89,7 +89,7 @@ class LogInPopUp extends Component {
         <form className='login-popup' onSubmit={ this.handleSubmit }>
           { nameInput }
           <section className="popup-input-wrapper">
-            <input ref={(input) => this.emailInput = input} id="email" className='popup-input' onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" value={email} />
+            <input ref={(input) => this.emailInput = input} id="email" className='popup-input' onChange={ this.handleChange } type="email" name="email" placeholder="Enter email" value={email} />
             <input id="password" className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" value={password} />
           </section>
           {errorMsg}

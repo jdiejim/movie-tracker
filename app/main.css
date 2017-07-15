@@ -1,6 +1,6 @@
 @keyframes appear {
-  from { transform: scaleY(0); }
-  to   { transform: scaleY(100%); }
+  from { height: 0px; padding: 0 30px; }
+  to   { height: 400px; padding: 30px; }
 }
 
 @keyframes fadeIn {
@@ -162,12 +162,8 @@ html {
   margin: 0 auto;
   border-radius: 5px;
   padding: 30px;
-  animation: appear 0.2s linear;
-}
-
-#login > * {
-  /*animation-delay: 5s;*/
-  animation: fadeIn 1.2s linear;
+  overflow: hidden;
+  animation: appear 0.4s linear;
 }
 
 .popup-input-wrapper {
@@ -257,6 +253,7 @@ html {
   grid-template: 100% / 3fr 2fr;
   height: 350px;
   background-color: black;
+  overflow: hidden;
 }
 
 .carousel-info-wrapper {
