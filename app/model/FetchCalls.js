@@ -8,6 +8,7 @@ import { signUp,
          deleteFavoriteSuccess,
          movieFetchSuccess,
        } from '../action';
+import Movie from './Movie'
 import { getNowPlaying } from '../utils/constants'
 
 export default class FetchCalls {
