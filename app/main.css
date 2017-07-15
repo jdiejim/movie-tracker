@@ -325,3 +325,9 @@ html {
 .carousel-anim .backdrop-poster {
   animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
 }
+
+.login-error-msg {
+ color: #ef8a82;
+ font-size: 10px;
+ margin: 0;
+}

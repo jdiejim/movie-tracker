@@ -44,8 +44,14 @@ export const signUp = (body) => {
 export const userIsLoading = (bool) => {
   return { type: 'USER_IS_LOADING', userLoading: bool }
 }
+
+
 export const userLogInFail = (bool) => {
   return { type: 'USER_LOGIN_FAIL', userFail: bool }
+}
+
+export const userLogInSuccess = (bool) => {
+  return { type: 'USER_LOGIN_SUCCESS', userFail: bool }
 }
 
 export const createNewUser = (body) => {

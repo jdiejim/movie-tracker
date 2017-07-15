@@ -61,7 +61,7 @@ export default class FetchCalls {
       })
       .then(res => res.json())
       .then(data => dispatch(signUp(data)))
-      .catch(err => console.log(err));
+      .catch(err => dispatch(userLogInFail(true)));
     }
   }
 
@@ -76,6 +76,7 @@ export default class FetchCalls {
       })
       .then(res => {
         dispatch(userIsLoading(false))
+
         return res;
       })
       .then(res => res.json())

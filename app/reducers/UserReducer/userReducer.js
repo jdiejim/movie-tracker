@@ -14,8 +14,9 @@ export const userReducer = (state={}, action) => {
 export const userFailReducer = (state=false, action) => {
   switch (action.type) {
     case 'USER_LOGIN_FAIL':
-      return true
-
+      return action.userFail
+    case 'USER_LOGIN_SUCCESS':
+      return action.userFail
     default:
       return state
   }

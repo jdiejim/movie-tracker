@@ -14,6 +14,15 @@ class LogInPopUp extends Component {
     this.handleBlur = this.handleBlur.bind(this);
   }
 
+  componentWillReceiveProps(np) {
+    console.log('np', np);
+    console.log('props', this.props);
+    if(np.userFail === this.props.userFail) {
+      np.userLogInSuccess(false);
+      np.history.push('/');
+    }
+  }
+
   handleChange(e) {
     const input = e.target.value;
     const key = e.target.name;
@@ -22,14 +31,15 @@ class LogInPopUp extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { type, signUp, logIn } = this.props;
+    const { type, signUp, logIn, user } = this.props;
     if (type === 'signup') {
       signUp(JSON.stringify(this.state))
     } else {
       logIn(JSON.stringify(this.state))
     }
+    this.setState({name: '', email: '', password: ''} )
 
-    this.props.history.push('/');
+
   }
 
   handleBlur() {
@@ -39,9 +49,11 @@ class LogInPopUp extends Component {
 
 
   render() {
-    const { type, signUp } = this.props;
+    const  { name, email, password } = this.state
+    const { type, signUp, userFail } = this.props;
     const title = type === 'signup' ? 'Sign Up' : 'Log In'
-    const nameInput = type === 'signup' ? <input className='popup-input' onChange={ this.handleChange } type="text" name="name" placeholder="Enter name" /> : '';
+    const nameInput = type === 'signup' ? <input className='popup-input' onChange={ this.handleChange } type="text" name="name" placeholder="Enter name" value={name} /> : '';
+    const errorMsg = userFail ? <p className="login-error-msg">Email or password not valid</p> : null;
 
     return (
       <div id='login' >
@@ -50,9 +62,10 @@ class LogInPopUp extends Component {
         <form className='login-popup' onSubmit={ this.handleSubmit }>
           { nameInput }
           <section className="popup-input-wrapper">
-            <input className='popup-input' onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" />
-            <input className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" />
+            <input className='popup-input' onChange={ this.handleChange } type="text" name="email" placeholder="Enter email" value={email} />
+            <input className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" value={password} />
           </section>
+          {errorMsg}
           <button className='popup-login-btn' type="submit">{ title }</button>
         </form>
       </div>
