@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getMovieDetail, getNowPlaying, getImageURL, getUpcoming } from '../../utils/constants';
-import Movies from '../../model/Movies';
 import HeaderContainer from '../../containers/HeaderContainer/HeaderContainer';
 import MovieListContainer from '../../containers/MovieListContainer/MovieListContainer';
 import LogInPopUp from '../LogInPopUp/LogInPopUp';
