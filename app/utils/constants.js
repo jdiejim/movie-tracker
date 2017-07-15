@@ -6,6 +6,7 @@ export const getMovieDetail = (id) => `https://api.themoviedb.org/3/movie/${id}?
 export const getImageURL = (imageURL) => `https://image.tmdb.org/t/p/w500/${imageURL}`;
 export const getNowPlaying = (page) => `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`;
 export const getUpcoming = (page) => `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`;
+export const getCast = (id) => `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
 
 
 // Actions

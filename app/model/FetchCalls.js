@@ -11,7 +11,7 @@ import { signUp,
          detailLoading,
        } from '../action';
 import Movie from './Movie'
-import { getNowPlaying, getMovieDetail } from '../utils/constants'
+import { getNowPlaying, getMovieDetail, getCast } from '../utils/constants'
 
 export default class FetchCalls {
   fetchMovies() {
@@ -40,9 +40,22 @@ export default class FetchCalls {
           return res;
         })
         .then(res => res.json())
-        .then(data => dispatch(detailFetchSuccess(data)))
+        .then(data => this.fetchCast(data))
+        .then(movieDetail => {
+          console.log(movieDetail);
+          return dispatch(detailFetchSuccess(movieDetail))
+        })
         .catch(err => console.log(err))
     }
+  }
+
+  fetchCast(movieDetail) {
+    const { id } = movieDetail;
+    console.log(movieDetail);
+    return fetch(getCast(id))
+      .then(res => res.json())
+      .then(data => Object.assign({}, movieDetail, {cast: data}))
+      .catch(err => console.log('err at cast'))
   }
 
 
