@@ -1,7 +1,6 @@
 import MovieListContainer       from './MovieListContainer';
 import { API_KEY }              from '../../utils/api_key'
-import { movieDataStub, user }  from './stubs';
-import AppContainer             from '../AppContainer/AppContainer'
+import { movieDataStub, user }  from '../../utils/stubs';
 
 import React                    from 'react';
 import { mount }                from 'enzyme';
@@ -54,6 +53,4 @@ describe('MovieListContainer', () => {
 
     expect(wrapper.find('.movie-list').length).toEqual(1)
   })
-
-
 })

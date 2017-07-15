@@ -20,8 +20,6 @@ export default class MovieList extends Component {
   }
 
   render() {
-    console.log('movielist :', this.props);
-    
     let moviesArray;
     let toggleView;
     const { movies, isLoading, goToMovie, user, postFavorite, deleteFavorite, favorites, location: { pathname } } = this.props;
