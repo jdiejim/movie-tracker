@@ -7,9 +7,11 @@ import { signUp,
          favoritesFetchSuccess,
          deleteFavoriteSuccess,
          movieFetchSuccess,
+         detailFetchSuccess,
+         detailLoading,
        } from '../action';
 import Movie from './Movie'
-import { getNowPlaying } from '../utils/constants'
+import { getNowPlaying, getMovieDetail } from '../utils/constants'
 
 export default class FetchCalls {
   fetchMovies() {
@@ -29,8 +31,18 @@ export default class FetchCalls {
     }
   }
 
-  fetchMovieDetail(){
-
+  fetchMovieDetail(id){
+    return (dispatch) => {
+      dispatch(detailLoading(true))
+      fetch(getMovieDetail(id))
+        .then(res => {
+          dispatch(detailLoading(false))
+          return res;
+        })
+        .then(res => res.json())
+        .then(data => dispatch(detailFetchSuccess(data)))
+        .catch(err => console.log(err))
+    }
   }
 
 
