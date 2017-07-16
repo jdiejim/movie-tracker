@@ -28,7 +28,7 @@ html {
 a,
 a:visited {
   text-decoration: none;
-  color: inherit;
+  color:#fff;
 }
 
 #main h1 {
@@ -134,14 +134,14 @@ a:visited {
 /*****MOVIE CARD*****/
 
 .movie-card {
-  height: 400px;
+  height: 500px;
   margin: 10px 0;
   position: relative;
 }
 
-.movie-card > *{
-  border: 2px solid red;
-}
+/*.movie-card > *{
+
+}*/
 .sub-card {
   margin: 0 auto;
   width: 85%;
@@ -163,11 +163,16 @@ a:visited {
 }
 
 .save-btn {
-  z-index: 100;
   position:absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 70px;
+  text-align: center;
+  background-color: #E54F92;
+  border-radius: 10px;
+  border: none;
+  opacity: 0.7;
 }
 
 .movie-card-info {
@@ -470,18 +475,18 @@ a:visited {
 
 @media screen and (max-width: 450px) {
   .movie-card {
-    /*grid-column-end: span 12;*/
+    grid-column-end: span 12;
   }
 }
 
-@media screen and (min-width: 450px) and (max-width: 700px) {
+@media screen and (min-width: 450px) and (max-width: 520px) {
   .movie-card {
-    /*grid-column-end: span 3;*/
+    grid-column-end: span 4;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 800px) {
   .movie-card {
-    /*grid-column-end: span 2;*/
+    grid-column-end: span 2;
   }
 }
 
