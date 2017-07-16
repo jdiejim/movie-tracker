@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  const navLinks = Object.keys(props.user).length ?
-      <a className="nav-link" onClick={() => props.logOut()}>Logout</a> :
+  console.log(props);
+    const toggleLink = props.location.pathname === '/favorites' ?
+     <Link className='toggle-link nav-link' to="/">Home</Link> : <Link className='toggle-link nav-link'
+       to="/favorites">Favorites</Link>
+    const navLinks = Object.keys(props.user).length ?
+      (<div className="nav-link-container">
+       {toggleLink}
+        <button className="nav-link" onClick={() => props.logOut()}>Logout</button>
+      </div>) :
      ( <div className="nav-link-container">
         <Link className="nav-link signup-link" to="/signup">Sign Up</Link>
         <Link className="nav-link login-link" to="/login">Login</Link>

@@ -23,7 +23,7 @@ export default class App extends Component {
     const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
     return (
       <main className={appClass} >
-        <HeaderContainer/>
+        <Route path='/' component={HeaderContainer}/>
           <Route path="/" component={CarouselContainer} />
             <Route path='/signup' render={() => {
               return <LogInPopUp {...this.props} type='signup'/>
@@ -33,10 +33,6 @@ export default class App extends Component {
             }}/>
             <Route exact path='/favorites' component={MovieListContainer} />
             <Route path='/detail/:id' component={MovieDetailContainer} />
-            {/* <Route path='/detail/:id' render={(props) => {
-              console.log(props)
-              return <MovieListContainer {...props}/>
-            }} /> */}
             <Route exact path='/' component={MovieListContainer} />
       </main>
     )

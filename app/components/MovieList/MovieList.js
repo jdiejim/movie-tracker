@@ -6,7 +6,6 @@ export default class MovieList extends Component {
   constructor() {
     super();
   }
-  //
 
   componentDidMount(){
     const { user: { id }, location: { pathname }, favorites, movies } = this.props;
@@ -25,7 +24,6 @@ export default class MovieList extends Component {
 
     switch (pathname) {
       case '/favorites':
-      toggleView = <Link className='toggle-link' to="/">Home</Link>
       moviesArray = favorites.map(movie =>
         <MovieCard
           favorite={true}
@@ -39,7 +37,6 @@ export default class MovieList extends Component {
       );
         break;
       default:
-      toggleView = <Link className='toggle-link' to="/favorites">Favorites</Link>
       moviesArray = movies.map(movie => {
         const favorite = favorites.filter(e => e.movie_id === movie.movie_id).length > 0;
         return (
@@ -54,11 +51,9 @@ export default class MovieList extends Component {
         )
       });
     }
-
     return (
       <section className='movie-list-container'>
         <div className='movie-list'>
-          {toggleView}
           {moviesArray}
         </div>
       </section>
