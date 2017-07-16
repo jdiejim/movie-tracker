@@ -24,7 +24,8 @@ export default class FetchCalls {
         return res;
       })
       .then(res => res.json())
-      .then(({ results }) => {
+      .then(({results }) => {
+
         const movies = results.map( movie => new Movie(movie))
         return dispatch(movieFetchSuccess(movies))
       });
