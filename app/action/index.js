@@ -62,8 +62,8 @@ export const fetchLogInUser = (body) => {
   return new FetchCalls().logInUser(body)
 }
 
-export const addFavoriteSuccess = () => {
-  return { type: 'ADD_SUCCESS' }
+export const addFavoriteSuccess = (favorite) => {
+  return { type: 'ADD_SUCCESS', favorite }
 }
 
 export const postFavorite = (movie, user_id) => {
