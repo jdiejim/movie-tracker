@@ -93,7 +93,10 @@ export default class FetchCalls {
         return res;
       })
       .then(res => res.json())
-      .then(data => dispatch(logIn(data)))
+      .then(data => {
+        console.log(data)
+        return dispatch(logIn(data))
+      })
       .catch(err => dispatch(userLogInFail(true)))
     }
   }
@@ -113,7 +116,10 @@ export default class FetchCalls {
         return res;
       })
       .then(res => res.json())
-      .then(msg => dispatch(addFavoriteSuccess()))
+      .then(msg => {
+        console.log(movie)
+        dispatch(addFavoriteSuccess(movie))
+      })
       .catch(err => console.log(err))
     }
   }

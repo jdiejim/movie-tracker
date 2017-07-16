@@ -28,13 +28,11 @@ export default class MovieDetail extends Component {
       cast: { cast },
     } = this.props.movie;
 
-    const posterStyle = {
-      backgroundImage: `url(${getImageURL(poster_path)})`,
-    }
+    const posterStyle = poster_path ? {backgroundImage: `url(${getImageURL(poster_path)})`} : {}
 
     const fullCast =  cast.map(character => {
       return (
-        <li className='detail-row'>
+        <li className='detail-row' key={character.id}>
           <img
             className={`detail-cast-img ${character.profile_path ? '' : 'default'}`}
             src={
@@ -73,7 +71,7 @@ export default class MovieDetail extends Component {
                 <h3>Summary: </h3>
                 <p>{ overview }</p>
               </article>
-              <h3>Full Cast</h3>
+              <h3>Full Cast:</h3>
               <ul>
                 { fullCast }
               </ul>

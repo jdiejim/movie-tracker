@@ -18,5 +18,6 @@ export const rootReducer = combineReducers({
   movieId: goToMovieReducer,
   user: userReducer,
   userFail: userFailReducer,
-  addFavoriteSuccess: addFavoriteReducer,
 });
+
+// addFavoriteSuccess: addFavoriteReducer,
