@@ -309,13 +309,17 @@ a:visited {
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .detail-cast-img {
   height: 80px;
 }
 
-
+.detail-cast-img.default {
+  width: 53.33px;
+}
 
 
 .carousel {

@@ -36,7 +36,7 @@ export default class MovieDetail extends Component {
       return (
         <li className='detail-row'>
           <img
-            className='detail-cast-img'
+            className={`detail-cast-img ${character.profile_path ? '' : 'default'}`}
             src={
               character.profile_path ?
                 getImageURL(character.profile_path) :
