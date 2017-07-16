@@ -29,7 +29,7 @@ export default class App extends Component {
               return <LogInPopUp {...this.props} type='login'/>
             }}/>
             <Route exact path='/favorites' component={MovieListContainer} />
-            <Route exact path='/detail/:id' component={MovieDetailContainer} />
+            <Route path='/detail/:id' component={MovieDetailContainer} />
             {/* <Route path='/detail/:id' render={(props) => {
               console.log(props)
               return <MovieListContainer {...props}/>

@@ -8,7 +8,6 @@ export default class MovieCard extends Component {
   }
 
   render() {
-
     const { movie: { movie_id }, movie, user, postFavorite, deleteFavorite, goToMovie } = this.props;
     const deleteBtn = deleteFavorite ? <button onClick={() => deleteFavorite(movie_id, user.id)}>delete</button> : ''
     const styles = { backgroundImage: `url(${getImageURL(movie.poster_path)})`}

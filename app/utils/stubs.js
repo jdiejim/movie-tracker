@@ -3,6 +3,7 @@ export const movieDataStub = {
     {
       "vote_count": 461,
       "id": 324852,
+      "movie_id": 324852,
       "video": false,
       "vote_average": 6.1,
       "title": "Despicable Me 3",
@@ -24,6 +25,7 @@ export const movieDataStub = {
     {
       "vote_count": 817,
       "id": 315635,
+      "movie_id": 315635,
       "video": false,
       "vote_average": 7.5,
       "title": "Spider-Man: Homecoming",
@@ -50,5 +52,5 @@ export const user = {
                       "password": "password",
                       "email": "tman2272@aol.com"
                     }
-                    
+
 export const mockStore = {movie: movieDataStub, user: user}
