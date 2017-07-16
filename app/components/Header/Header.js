@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import CarouselContainer from '../../containers/CarouselContainer/CarouselContainer';
 
 const Header = (props) => {
   console.log(props);
-    const toggleLink = props.match.params.id === 'favorites' ?
+    const toggleLink = props.location.pathname === '/favorites' ?
      <Link className='toggle-link nav-link' to="/">Home</Link> : <Link className='toggle-link nav-link'
        to="/favorites">Favorites</Link>
     const navLinks = Object.keys(props.user).length ?
@@ -20,10 +19,12 @@ const Header = (props) => {
   return (
     <header className="header">
       <nav className="nav-bar">
-        <h3 className="nav-title">Movie <span>Tracker</span></h3>
+        <Link to="/" className="logo">
+          <h3 className="logo-title">MOVIE</h3>
+          <p className="logo-second-title">TRACKER</p>
+        </Link>
         {navLinks}
       </nav>
-      <CarouselContainer />
     </header>
   )
 }

@@ -16,5 +16,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 }
 
-// export default connect(null, null)(MovieDetail);
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCarouselMovies } from '../../utils/constants';
+import { getCarouselMovies, getCarouselClass } from '../../utils/constants';
 
 class Carousel extends Component {
   constructor() {
@@ -7,11 +7,13 @@ class Carousel extends Component {
     this.state = {
       carouselHistory: [],
       position: 0,
-      intervalID: ''
+      intervalID: '',
+      carouselAnimation: ''
     }
 
     this.handlePoster = this.handlePoster.bind(this);
     this.timer = this.timer.bind(this);
+    this.removeInfoAnimation = this.removeInfoAnimation.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,10 +40,11 @@ class Carousel extends Component {
 
   removeInfoAnimation() {
 
-    document.body.classList.remove('carousel-anim');
+    this.setState({ carouselAnimation: '' });
   }
 
   timer() {
+    const carouselAnimation = 'carousel-anim';
     let { position } = this.state;
 
     position++;
@@ -50,8 +53,7 @@ class Carousel extends Component {
       position = 0;
     }
 
-    this.setState({ position });
-    document.body.classList.add('carousel-anim');
+    this.setState({ position, carouselAnimation });
   }
 
   handlePoster(e) {
@@ -63,8 +65,9 @@ class Carousel extends Component {
   }
 
   render() {
-    const { movies } = this.props;
-    const { carouselHistory, position } = this.state;
+    const { movies, location: { pathname } } = this.props;
+    const { carouselHistory, position, carouselAnimation } = this.state;
+    const carouselClass = getCarouselClass(pathname);
     const inputClass1 = position === 0 ? 'poster-selector selector-active' : 'poster-selector';
     const inputClass2 = position === 1 ? 'poster-selector selector-active' : 'poster-selector';
     const inputClass3 = position === 2 ? 'poster-selector selector-active' : 'poster-selector';
@@ -76,7 +79,7 @@ class Carousel extends Component {
     const { title, year, movieStyle, overview } = carouselHistory[position];
 
     return (
-      <section className="carousel">
+      <section className={`${carouselClass} ${carouselAnimation}`}>
         <article className="backdrop-poster" style={movieStyle}>
           <input className={inputClass1} onClick={this.handlePoster} type="submit" value="0" />
           <input className={inputClass2} onClick={this.handlePoster} type="submit" value="1" />

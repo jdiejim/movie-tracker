@@ -22,21 +22,14 @@ export const userFailReducer = (state=false, action) => {
   }
 }
 
-export const addFavoriteReducer = (state=false, action) => {
-  switch (action.type) {
-    case 'ADD_SUCCESS':
-      return true;
-    default:
-      return state;
-  }
-}
-
 export const favoritesReducer = (state=[], action) => {
   switch (action.type) {
     case 'FAVORITES_FETCH_SUCCESS':
-      return [...state, ...action.movies];
+      return [...action.movies];
     case 'DELETE_FAVORITES_SUCCESS':
       return [...state].filter(movie => movie.movie_id !== action.movie_id)
+    case 'ADD_SUCCESS':
+      return [...state, action.favorite]
     default:
       return state;
   }

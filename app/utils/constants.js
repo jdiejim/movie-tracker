@@ -1,3 +1,4 @@
+import React from 'react';
 import CarouselMovie from '../model/CarouselMovie';
 import { API_KEY } from './api_key';
 
@@ -48,4 +49,18 @@ export const getArrayofNumbers = (array=[]) => {
 
 export const getCarouselMovies = (movies) => {
   return getArrayofNumbers().map(n => new CarouselMovie(movies[n]));
+}
+
+export const getCarouselClass = (path) => {
+  const pathname = path.split('/');
+  return pathname.includes('favorites') || pathname.includes('detail') ? 'carousel-hidden' : 'carousel' ;
+}
+
+// Error helpers
+export const getErrorSetup = (bool, type) => {
+  const errorClass = bool ? 'login-error' : '';
+  const errorMsgText = type === 'signup' ? 'Email already exists' : 'Email or password not valid';
+  const errorMsg = bool ? <p className="login-error-msg">{errorMsgText}</p> : null;
+
+  return { errorMsg, errorClass };
 }
