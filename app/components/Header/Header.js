@@ -4,7 +4,7 @@ import CarouselContainer from '../../containers/CarouselContainer/CarouselContai
 
 const Header = (props) => {
   const navLinks = Object.keys(props.user).length ?
-      <button onClick={() => props.logOut()}>Logout</button> :
+      <a className="nav-link" onClick={() => props.logOut()}>Logout</a> :
      ( <div className="nav-link-container">
         <Link className="nav-link signup-link" to="/signup">Sign Up</Link>
         <Link className="nav-link login-link" to="/login">Login</Link>
@@ -13,7 +13,10 @@ const Header = (props) => {
   return (
     <header className="header">
       <nav className="nav-bar">
-        <h3 className="nav-title">Movie <span>Tracker</span></h3>
+        <Link to="/" className="logo">
+          <h3 className="logo-title">MOVIE</h3>
+          <p className="logo-second-title">TRACKER</p>
+        </Link>
         {navLinks}
       </nav>
       <CarouselContainer />

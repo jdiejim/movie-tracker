@@ -47,38 +47,51 @@ a:visited {
   align-items: center;
 }
 
-.nav-title {
-  color: #fff;
-  font-size: 28px;
-  line-height: 30px;
-  display: inline-block;
-  margin: 10px;
-  width: 150px;
+.logo {
+  margin: 0 35px;
+  line-height: 28px;
 }
 
-.nav-title span {
+.logo-title {
+  color: #fff;
+  margin: 0;
+  width: 150px;
+  font-size: 25px;
+}
+
+.logo-second-title {
+  margin: 0;
   color: #07A4F5;
-  font-weight: 400;
+  font-size: 25px;
   text-transform: uppercase;
 }
 
 .nav-link-container {
+  margin: 0 35px;
   display: flex;
   justify-content: space-between;
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px 20px;
   margin: 0 10px;
   border: 1px solid #979797;
   border-radius: 10px;
 }
 
-.nav-link:hover {
+.signup-link {
   background-color: #E54F92;
-  border-color: #E54F92;
+  border: none;
+}
+
+.nav-link:hover {
+  background-color: #e399ba;
+  border-color: #e399ba;
 }
 
 .nav-link:visited {
@@ -107,6 +120,7 @@ a:visited {
 .movie-list-container {
   background-color: #e6e6e6;
   width: 100%;
+  overflow: hidden;
 }
 
 .movie-list {
@@ -200,7 +214,7 @@ a:visited {
   border-radius: 5px;
   padding: 30px;
   overflow: hidden;
-  animation: appear 0.4s linear;
+  animation: appear 0.2s linear;
 }
 
 .popup-input-wrapper {
@@ -229,6 +243,11 @@ a:visited {
   font-size: 20px;
   font-weight: lighter;
   margin: 20px 0;
+}
+
+.popup-input:focus {
+  outline: none;
+  border-bottom: 2px solid #8fbcfb;
 }
 
 .popup-input::-webkit-input-placeholder {
@@ -263,8 +282,47 @@ a:visited {
   margin: 20px 0;
 }
 
+.popup-login-btn:hover {
+  background-color: #b3d0f7;
+}
+
+.popup-login-btn:focus {
+  outline: none;
+}
+
+.disabled-btn {
+  background-color: #bdbdbd;
+}
+
+.disabled-btn:hover {
+  background-color: #bdbdbd;
+}
+
+.login-error-msg {
+ color: #ef8a82;
+ font-size: 12px;
+ margin: 0;
+}
+
+.login-error .popup-login-btn {
+  background-color:  #ef8a82;
+}
+
+.login-error .popup-login-btn:hover {
+  background-color:  #e7aaa5;
+}
+
+.login-error .popup-input:focus {
+  outline: none;
+  border-bottom: 2px solid #ef8a82;
+}
+
+.login-error .popup-title {
+  color: #ef8a82;
+
 .detail-cover {
   background-color: #e6e6e6;
+
 }
 
 .detail {
@@ -358,8 +416,6 @@ a:visited {
   background-position: center;
   background-size: 100%;
   background-color: black;
-  /*background-position: 50% 0%;*/
-  /*background-size: 100%;*/
 }
 
 .poster-selector {
@@ -392,12 +448,6 @@ a:visited {
 
 .carousel-anim .backdrop-poster {
   animation: carouselInfo 0.5s cubic-bezier(.32,.12,.33,1.25);
-}
-
-.login-error-msg {
- color: #ef8a82;
- font-size: 10px;
- margin: 0;
 }
 
 .header {
