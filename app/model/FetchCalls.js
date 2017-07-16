@@ -117,7 +117,6 @@ export default class FetchCalls {
       })
       .then(res => res.json())
       .then(msg => {
-        console.log(movie)
         dispatch(addFavoriteSuccess(movie))
       })
       .catch(err => console.log(err))
