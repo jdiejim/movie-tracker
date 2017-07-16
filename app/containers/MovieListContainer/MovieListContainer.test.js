@@ -49,8 +49,50 @@ describe('MovieListContainer', () => {
           </Provider>
     )
 
-    // await resolveAfter2Seconds()
-
     expect(wrapper.find('.movie-list').length).toEqual(1)
+  })
+
+  it.only('should render movie cards', () => {
+    const wrapper = mount(
+          <Provider store={store} >
+            <ConnectedRouter history={history} >
+              <Route to='' history={history} component={MovieListContainer}/>
+            </ConnectedRouter>
+          </Provider>
+    )
+
+    expect(wrapper.find('.movie-card').length).toEqual(2)
+  })
+
+  it.only('should have props passed in', () => {
+    const wrapper = mount(
+          <Provider store={store} >
+            <ConnectedRouter history={history} >
+              <Route to='' history={history} component={MovieListContainer}/>
+            </ConnectedRouter>
+          </Provider>
+    )
+    console.log(wrapper.props())
+    // expect(wrapper.find('.movie-card').length).toEqual(2)
+  })
+
+  it('should redirect to login when the favorites button is clicked and the user is not logged in', () => {
+    const wrapper = mount(
+          <Provider store={store} >
+            <ConnectedRouter history={history} >
+              <Route to='' history={history} component={MovieListContainer}/>
+            </ConnectedRouter>
+          </Provider>
+    )
+  })
+
+  it('should be able to add a movie to favorites', () => {
+    const wrapper = mount(
+          <Provider store={store} >
+            <ConnectedRouter history={history} >
+              <Route to='' history={history} component={MovieListContainer}/>
+            </ConnectedRouter>
+          </Provider>
+    )
   })
 })

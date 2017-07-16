@@ -6,6 +6,7 @@ export default class MovieList extends Component {
   constructor() {
     super();
   }
+  //
 
   componentDidMount(){
     const { user: { id }, location: { pathname } } = this.props;
