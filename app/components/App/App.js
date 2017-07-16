@@ -6,6 +6,8 @@ import LogInPopUp from '../LogInPopUp/LogInPopUp';
 import { Route, Switch } from 'react-router-dom';
 import LogInPopUpContainer from '../../containers/LogInPopUpContainer/LogInPopUpContainer';
 import MovieDetailContainer from '../../containers/MovieDetailContainer/MovieDetailContainer';
+import CarouselContainer from '../../containers/CarouselContainer/CarouselContainer';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +24,7 @@ export default class App extends Component {
     return (
       <main className={appClass} >
         <HeaderContainer/>
+          <Route path="/" component={CarouselContainer} />
             <Route path='/signup' render={() => {
               return <LogInPopUp {...this.props} type='signup'/>
             }}/>
