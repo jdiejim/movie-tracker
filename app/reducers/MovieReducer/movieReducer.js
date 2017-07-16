@@ -1,4 +1,4 @@
-export const movieReducer = (state={}, action) => {
+export const movieReducer = ( state = { cast: { cast: [] } }, action)  => {
   switch (action.type){
     case 'DETAIL_FETCH_SUCCESS':
       return action.movie;
@@ -7,7 +7,7 @@ export const movieReducer = (state={}, action) => {
   }
 }
 
-export const detailLoadingReducer = (state=true, action) => {
+export const detailLoadingReducer = ( state = true, action ) => {
   switch (action.type) {
     case 'DETAIL_IS_LOADING':
       return true;
@@ -16,7 +16,7 @@ export const detailLoadingReducer = (state=true, action) => {
   }
 }
 
-export const goToMovieReducer = (state='', action) => {
+export const goToMovieReducer = ( state = '', action ) => {
   switch (action.type) {
     case 'GOTO_MOVIE':
       return action.id
