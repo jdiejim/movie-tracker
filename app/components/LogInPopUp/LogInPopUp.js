@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { getErrorSetup } from '../../utils/constants';
 
 class LogInPopUp extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       name: '',
       email: '',
@@ -48,7 +48,7 @@ class LogInPopUp extends Component {
 
   handleChange(e) {
     const input = e.target.value;
-    const key = e.target.name;
+    const key = e.target.id;
     const disabled = this.handleDisabled();
 
     this.setState({ [key]: input, disabled });
@@ -87,7 +87,8 @@ class LogInPopUp extends Component {
     const nameInput = type === 'signup' ?
     <input
       ref={(input) => this.nameInput = input}
-      id="name" className='popup-input'
+      id="name"
+      className='popup-input'
       onChange={ this.handleChange }
       type="text"
       name="name"
@@ -97,15 +98,15 @@ class LogInPopUp extends Component {
 
     return (
       <div id='login' className={errorClass} >
-        <h1 className='popup-title'>{ title }</h1>
-        <form className='login-popup' onSubmit={ this.handleSubmit }>
+        <h1 className='popup-title'>{title}</h1>
+        <form className='login-popup' onSubmit={this.handleSubmit}>
           <section className="popup-input-wrapper">
-            { nameInput }
-            <input ref={(input) => this.emailInput = input} id="email" className='popup-input' onChange={ this.handleChange } type="email" name="email" placeholder="Enter email" value={email} />
-            <input ref={(input) => this.passwordInput = input} id="password" className='popup-input' onChange={ this.handleChange } type="text" name="password" placeholder="Enter password" value={password} />
+            {nameInput}
+            <input ref={(input) => this.emailInput = input} id="email" className='popup-input' onChange={this.handleChange} type="email" name="email" placeholder="Enter email" value={email} />
+            <input ref={(input) => this.passwordInput = input} id="password" className='popup-input' onChange={this.handleChange} type="text" name="password" placeholder="Enter password" value={password} />
           </section>
           {errorMsg}
-          <button className={btnClass} type="submit" disabled={disabled} >{ title }</button>
+          <button className={btnClass} type="submit" disabled={disabled}>{title}</button>
         </form>
       </div>
     )
