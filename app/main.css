@@ -108,8 +108,7 @@ a:visited {
 .movie-list {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  /*grid-template-rows: 50% 50%;*/
-  grid-auto-rows: 100%;
+  grid-template-rows: auto;
   padding: 10px 0 0;
 }
 
@@ -152,19 +151,14 @@ a:visited {
 .movie-card-info {
   position: absolute;
   top: 5%;
-  left: 27%;
+  left: 23%;
   margin-left: -40px;
   width: 80%;
-  height: 100%;
+  /*height: 100%;*/
   color: transparent;
   font-size: 80%;
 }
 
-.movie-card-info::before {
-  /*width: 100%;
-  height: 100%;*/
-
-}
 
 .movie-card-info:hover {
   color: #fff;
@@ -373,4 +367,24 @@ a:visited {
 
 .header {
   margin: 75px 0 0 0;
+}
+
+/****MEDIA QUERIES****/
+
+
+@media screen and (max-width: 450px) {
+  .movie-card {
+    grid-column-end: span 12;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 700px) {
+  .movie-card {
+    grid-column-end: span 3;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  .movie-card {
+    grid-column-end: span 2;
+  }
 }
