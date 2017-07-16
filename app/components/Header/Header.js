@@ -9,7 +9,7 @@ const Header = (props) => {
     const navLinks = Object.keys(props.user).length ?
       (<div className="nav-link-container">
        {toggleLink}
-        <button className="nav-link" onClick={() => props.logOut()}>Logout</button>
+        <a className="nav-link toggle-link" onClick={() => props.logOut()}>Logout</a>
       </div>) :
      ( <div className="nav-link-container">
         <Link className="nav-link signup-link" to="/signup">Sign Up</Link>

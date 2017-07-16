@@ -107,8 +107,6 @@ a:visited {
   border-radius: 10px;
   font-weight: 700;
   text-align: center;
-  color: rgb(45, 45, 45);
-  background-color: rgba(45, 45, 45, 0.25);
 }
 
 .toggle-link:hover {
