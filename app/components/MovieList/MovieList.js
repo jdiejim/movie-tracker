@@ -30,7 +30,6 @@ export default class MovieList extends Component {
 
     switch (pathname) {
       case '/favorites':
-      toggleView = <Link className='toggle-link' to="/">Home</Link>
       moviesArray = favorites.map(movie =>
         <MovieCard
           deleteFavorite={deleteFavorite}
@@ -42,7 +41,6 @@ export default class MovieList extends Component {
         />);
         break;
       default:
-      toggleView = <Link className='toggle-link' to="/favorites">Favorites</Link>
       moviesArray = movies.map(movie =>
         <MovieCard
           key={movie.movie_id}
@@ -56,7 +54,6 @@ export default class MovieList extends Component {
     return (
       <section className='movie-list-container'>
         <div className='movie-list'>
-          {toggleView}
           {moviesArray}
         </div>
       </section>

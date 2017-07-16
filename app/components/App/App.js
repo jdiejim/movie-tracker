@@ -21,7 +21,7 @@ export default class App extends Component {
     const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
     return (
       <main className={appClass} >
-        <HeaderContainer/>
+        <Route path='/' component={HeaderContainer}/>         
             <Route path='/signup' render={() => {
               return <LogInPopUp {...this.props} type='signup'/>
             }}/>
