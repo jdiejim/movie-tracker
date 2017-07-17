@@ -18,7 +18,7 @@ export default class MovieCard extends Component {
           } = this.props;
     const styles = { backgroundImage: `url(${getImageURL(movie.poster_path)})`}
     const saveBtn = favorite ?
-      <button className='save-btn' onClick={() => deleteFavorite(movie_id, user.id)}>Remove</button> :
+      <button className='save-btn remove-fav' onClick={() => deleteFavorite(movie_id, user.id)}>Remove</button> :
       <button className='save-btn' onClick={() => postFavorite(movie, user.id)}>Save</button>
 
     const btn = Object.keys(user).length ?

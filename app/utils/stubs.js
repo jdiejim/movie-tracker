@@ -53,4 +53,17 @@ export const user = {
                       "email": "tman2272@aol.com"
                     }
 
-export const mockStore = {movie: movieDataStub, user: user}
+
+export const favorites = [
+  {
+    "id": 45,
+    "movie_id": 324852,
+    "user_id": 5,
+    "title": "Despicable Me 3",
+    "poster_path": "/5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg",
+    "release_date": "2017-06-29",
+    "vote_average": "6.1",
+    "overview": "The mischievous Minions hope that Gru will return to a life of crime after the new boss of the Anti-Villain League fires him. Instead, Gru decides to remain retired and travel to Freedonia to meet his long-lost twin brother for the first time. The reunited siblings soon find themselves in an uneasy alliance to take down the elusive Balthazar Bratt, a former 1980s child star who seeks revenge against the world.",
+    "backdrop_path": "/puV2PFq42VQPItaygizgag8jrXa.jpg"
+  }
+]

@@ -1,6 +1,9 @@
 import AppContainer             from './AppContainer';
 import { API_KEY }              from '../../utils/api_key';
-import { movieDataStub, user }  from '../../utils/stubs';
+import {
+  movieDataStub,
+  user,
+  favorites } from '../../utils/stubs';
 
 import React                    from 'react';
 import { mount }                from 'enzyme';
@@ -14,7 +17,9 @@ import thunk                    from 'redux-thunk';
 
 
 const history = createHistory()
-const store   = configureMockStore([thunk])({movies:movieDataStub.results, user:user})
+history.location.pathname = 'http://localhost:3000/'
+const loggedInStore   = configureMockStore([thunk])({movies:movieDataStub.results, user:user, favorites})
+const loggedOutStore   = configureMockStore([thunk])({movies:movieDataStub.results, user: {}, favorites: []})
 
 
 describe('AppContainer', () => {
@@ -23,6 +28,11 @@ describe('AppContainer', () => {
     fetchMock.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`, {
       status: 200,
       body: movieDataStub,
+    })
+
+    fetchMock.get(`/api/users/1/favorites`, {
+      status: 200,
+      body: favorites,
     })
   })
 
@@ -41,16 +51,18 @@ describe('AppContainer', () => {
 
   it('should mount', () => {
     const wrapper = mount(
-          <Provider store={store} >
+          <Provider store={loggedInStore} >
             <ConnectedRouter history={history} >
               <Route to='/' history={history} component={AppContainer}/>
             </ConnectedRouter>
           </Provider>
     )
+    // console.log(history)
+    expect(wrapper.find('main').length).toEqual(1);
+    console.log(wrapper.find('main').debug())
 
-    // await resolveAfter2Seconds()
 
-    expect(wrapper.find('.nav-bar').props().children[1].props.onClick().type).toEqual('LOG_OUT')
-    expect(typeof wrapper.find('.nav-bar').props().children[1].props.onClick).toEqual('function')
+    // expect(wrapper.find('.nav-bar').props().children[1].props.onClick().type).toEqual('LOG_OUT')
+    // expect(typeof wrapper.find('.nav-bar').props().children[1].props.onClick).toEqual('function')
   })
 })

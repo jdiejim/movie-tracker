@@ -8,6 +8,7 @@ export default class MovieList extends Component {
   }
 
   componentDidMount(){
+    console.log('mounted')
     const { user: { id }, location: { pathname }, favorites, movies } = this.props;
     if (id) { this.props.fetchFavorites(id) }
     if (!movies.length) { this.props.fetchMovies() }
@@ -15,7 +16,6 @@ export default class MovieList extends Component {
 
   cardCreator(array) {
     const { movies, favorites, user, postFavorite, deleteFavorite, goToMovie } = this.props;
-
     return array.map(movie => {
       const favorite = favorites.filter(e => e.movie_id === movie.movie_id).length > 0;
         return (
