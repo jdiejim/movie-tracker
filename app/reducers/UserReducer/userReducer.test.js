@@ -16,7 +16,7 @@ describe('userReducer',  () => {
     expect(userReducer(state, actionResult)).toEqual(expected)
   })
 
-  it.skip('03: should return state with a new user on logIn', () => {
+  it('03: should return state with a new user on logIn', () => {
     const state = {}
     const body = {user: {name: "bat dude" , email: "superbatdude69@mail.com"}}
     const actionResult = action.logIn(body)
@@ -37,9 +37,10 @@ describe('userFailReducer', () => {
     expect(userFailReducer(false, actionResult)).toBe(true)
   })
 
-  it.skip('03: should return false if the action doesnt match', () => {
-    const actionResult = action.signUp({})
+  it('03: should return false if the action doesnt match', () => {
+    const body = { user: { name: 'Batman', email: 'bruce@wayne.org', id: 'BAT' } }
+    const actionResult = action.signUp(body)
 
-    expect(userFailReducer(true, actionResult)).toBe(false)
+    expect(userFailReducer(false, actionResult)).toBe(false)
   })
 })

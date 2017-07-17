@@ -6,11 +6,11 @@ import configureMockStore   from 'redux-mock-store';
 import MovieDetailContainer from './MovieDetailContainer';
 
 describe('MovieDetailContainer', () => {
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 })
