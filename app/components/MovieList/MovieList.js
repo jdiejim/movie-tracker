@@ -15,7 +15,6 @@ export default class MovieList extends Component {
 
   cardCreator(array) {
     const { movies, favorites, user, postFavorite, deleteFavorite, goToMovie } = this.props;
-
     return array.map(movie => {
       const favorite = favorites.filter(e => e.movie_id === movie.movie_id).length > 0;
         return (

@@ -1,7 +1,6 @@
 import React              from 'react';
 import { shallow, mount } from 'enzyme';
 import LogInPopUp         from './LogInPopUp';
-import ReactDOM           from 'react-dom';
 
 describe('LogInPopUp', () => {
   it('should render the correct components when it mounts', () => {

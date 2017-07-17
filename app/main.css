@@ -99,13 +99,13 @@ a:visited {
 }
 
 .toggle-link {
-
+  cursor: pointer;
   display: inline-block;
   padding: 10px;
   margin: 10px;
   border: 1px solid rgb(45, 45, 45);
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -135,6 +135,7 @@ a:visited {
   height: 400px;
   margin: 10px 0;
   position: relative;
+  border: 2px solid transparent;
 }
 
 /*.movie-card > *{
@@ -149,6 +150,11 @@ a:visited {
   background-size: cover;
   box-shadow: 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22);
 }
+
+.favorite .sub-card {
+  box-shadow: 0 14px 45px rgba(247, 150, 9, 0.32), 0 10px 18px rgba(247, 150, 9, 0.73);
+}
+
 
 .sub-card:hover {
   /*-webkit-filter: blur(5px);
@@ -171,6 +177,20 @@ a:visited {
   border-radius: 10px;
   border: none;
   opacity: 0.7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.save-btn.remove-fav {
+  background-color: #07A4F5;
+}
+
+.save-btn:hover {
+  opacity: 1;
+}
+
+.save-btn.remove-fav:hover {
+  opacity: 1;
 }
 
 .movie-card-info {
@@ -179,11 +199,11 @@ a:visited {
   left: 23%;
   margin-left: -40px;
   width: 80%;
-  /*height: 100%;*/
   color: transparent;
-  font-size: 80%;
+  font-size: 85%;
+  line-height: 1.7;
+  z-index: 35;
 }
-
 
 .movie-card-info:hover {
   color: #fff;
@@ -393,7 +413,6 @@ a:visited {
   width: 53.33px;
 }
 
-
 .carousel {
   display: grid;
   grid-template: 100% / 3fr 2fr;
@@ -472,16 +491,31 @@ a:visited {
 
 
 @media screen and (max-width: 450px) {
+ .nav-link-container {
+   margin: 0 15px 0 0;
+ }
+
+ .nav-link {
+   padding: 5px 17px;
+   margin: 0 5px;
+ }
+
+  .logo {
+    margin: 0 20px;
+  }
+
   .movie-list {
     height: 500px;
     grid-template-columns: 1fr;
+    overflow: scroll;
   }
 }
 
 @media screen and (min-width: 450px) and (max-width: 750px) {
   .movie-list {
-    height: 500px;
+    height: 550px;
     grid-template-columns:  1fr 1fr;
+    overflow: scroll;
   }
 }
 @media screen and (min-width: 750px) and (max-width: 950px) {

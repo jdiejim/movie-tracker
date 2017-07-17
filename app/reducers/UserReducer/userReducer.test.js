@@ -4,7 +4,6 @@ import * as action from '../../action';
 describe('userReducer',  () => {
 
   it('01: should return initial state', () => {
-
     expect(userReducer(undefined, {})).toEqual({})
   })
 
