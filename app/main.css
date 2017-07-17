@@ -99,7 +99,7 @@ a:visited {
 }
 
 .toggle-link {
-
+  cursor: pointer;
   display: inline-block;
   padding: 10px;
   margin: 10px;
@@ -152,9 +152,8 @@ a:visited {
 }
 
 .favorite .sub-card {
-  box-shadow: 0 14px 45px rgba(7, 164, 245, .25), 0 10px 18px rgba(7, 164, 245, 0.22);
+  box-shadow: 0 14px 45px rgba(247, 150, 9, 0.32), 0 10px 18px rgba(247, 150, 9, 0.73);
 }
-
 
 
 .sub-card:hover {
@@ -178,6 +177,8 @@ a:visited {
   border-radius: 10px;
   border: none;
   opacity: 0.7;
+  color: #fff;
+  cursor: pointer;
 }
 
 .save-btn.remove-fav {
@@ -185,11 +186,11 @@ a:visited {
 }
 
 .save-btn:hover {
-  background-color: #a43466;
+  opacity: 1;
 }
 
 .save-btn.remove-fav:hover {
-  background-color: #0c75ab;
+  opacity: 1;
 }
 
 .movie-card-info {
