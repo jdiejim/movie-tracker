@@ -6,11 +6,7 @@ import { Provider }       from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
 describe('MovieDetail', () => {
-  it('should', () => {
-
-  })
-
-  it('should', () => {
+  it.skip('should mount', () => {
 
   })
 })

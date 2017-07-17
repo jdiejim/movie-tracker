@@ -1,14 +1,14 @@
 import { moviesSuccessReducer, moviesAreLoadingReducer } from './moviesReducer';
 
 describe('moviesSuccessReducer', () => {
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 
 })
 
 describe('moviesAreLoadingReducer', () => {
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 })

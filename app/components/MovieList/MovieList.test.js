@@ -7,11 +7,11 @@ import MovieList          from './MovieList';
 
 describe('MovieList', () => {
   const mockStore = configureMockStore({"movies": [], "isLoading": false})
-  const wrapper = mount(
-    <Provider store={ mockStore }>
-      <MovieList />
-    </Provider>
-  )
+  // const wrapper = mount(
+  //   <Provider store={ mockStore }>
+  //     <MovieList />
+  //   </Provider>
+  // )
 
   it('should', () => {
     // const component = wrapper.find('')

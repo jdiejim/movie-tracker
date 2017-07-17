@@ -1,11 +1,11 @@
 import movieReducer from './movieReducer';
 
-desscribe('movieReducer', () => {
-  it('should', () => {
+describe('movieReducer', () => {
+  it.skip('should', () => {
 
   })
 
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 

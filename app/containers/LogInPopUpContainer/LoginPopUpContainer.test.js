@@ -6,11 +6,11 @@ import configureMockStore   from 'redux-mock-store';
 import LoginPopUpContainer  from './LoginPopUpContainer';
 
 describe('LoginPopUpContainer', () => {
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 })

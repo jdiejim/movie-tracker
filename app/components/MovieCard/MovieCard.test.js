@@ -1,6 +1,11 @@
-import React                 from 'react';
-import { shallow, mount }    from 'enzyme';
-import MovieCard             from './MovieCard';
+import React              from 'react';
+import { shallow, mount } from 'enzyme';
+import MovieCard          from './MovieCard';
+import ReactDOM           from 'react-dom';
+import { Provider }       from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import { getImageURL } from '../../utils/constants';
+
 
 describe('MovieCard', () => {
   const movie = {
