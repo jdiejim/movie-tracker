@@ -99,13 +99,13 @@ a:visited {
 }
 
 .toggle-link {
-
+}
   display: inline-block;
   padding: 10px;
   margin: 10px;
   border: 1px solid rgb(45, 45, 45);
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -171,6 +171,7 @@ a:visited {
   border-radius: 10px;
   border: none;
   opacity: 0.7;
+  color: #fff;
 }
 
 .movie-card-info {
@@ -179,9 +180,10 @@ a:visited {
   left: 23%;
   margin-left: -40px;
   width: 80%;
-  /*height: 100%;*/
   color: transparent;
-  font-size: 80%;
+  font-size: 85%;
+  line-height: 1.7;
+  z-index: 35;
 }
 
 
