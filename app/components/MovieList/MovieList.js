@@ -8,7 +8,6 @@ export default class MovieList extends Component {
   }
 
   componentDidMount(){
-    console.log('mounted')
     const { user: { id }, location: { pathname }, favorites, movies } = this.props;
     if (id) { this.props.fetchFavorites(id) }
     if (!movies.length) { this.props.fetchMovies() }

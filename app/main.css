@@ -205,7 +205,6 @@ a:visited {
   z-index: 35;
 }
 
-
 .movie-card-info:hover {
   color: #fff;
 }
@@ -514,7 +513,7 @@ a:visited {
 
 @media screen and (min-width: 450px) and (max-width: 750px) {
   .movie-list {
-    height: 500px;
+    height: 550px;
     grid-template-columns:  1fr 1fr;
     overflow: scroll;
   }
