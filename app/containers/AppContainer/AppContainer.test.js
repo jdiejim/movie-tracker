@@ -57,12 +57,7 @@ describe('AppContainer', () => {
             </ConnectedRouter>
           </Provider>
     )
-    // console.log(history)
+
     expect(wrapper.find('main').length).toEqual(1);
-    console.log(wrapper.find('main').debug())
-
-
-    // expect(wrapper.find('.nav-bar').props().children[1].props.onClick().type).toEqual('LOG_OUT')
-    // expect(typeof wrapper.find('.nav-bar').props().children[1].props.onClick).toEqual('function')
   })
 })

@@ -3,14 +3,14 @@ import { Provider }       from 'react-redux';
 import React              from 'react';
 import ReactDOM           from 'react-dom';
 import configureMockStore from 'redux-mock-store';
-import Carousel           from './Carousel';
+import CarouselContainer          from './CarouselContainer';
 
-describe('Carousel', () => {
-  it('should', () => {
+describe('CarouselContainer', () => {
+  it.skip('should', () => {
 
   })
 
-  it('should', () => {
+  it.skip('should', () => {
 
   })
 })

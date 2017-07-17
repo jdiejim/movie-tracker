@@ -14,10 +14,6 @@ export default class App extends Component {
     super(props)
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     const { location: { pathname } } = this.props;
     const appClass = pathname === '/login' || pathname === '/signup' ? 'bg-blur app' : 'app'
