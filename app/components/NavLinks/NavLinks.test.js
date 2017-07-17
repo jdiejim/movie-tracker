@@ -35,4 +35,23 @@ describe('NavLinks', () => {
     expect(home).toBe('Home');
     expect(logout).toBe('Logout');
   });
+
+  it('should render home and logout link if sign in and in favorites path', () => {
+    const wrapper = shallow(<NavLinks pathname='/favorites' user={{ id: 1 }} />);
+    const home = wrapper.find('.toggle-link').get(0).props.children;
+    const logout = wrapper.find('.toggle-link').get(1).props.children;
+
+    expect(home).toBe('Home');
+    expect(logout).toBe('Logout');
+  });
+
+  it('should trigger logout function on click', () => {
+    const mockFn = jest.fn();
+    const wrapper = shallow(<NavLinks pathname='/favorites' user={{ id: 1 }} logOut={mockFn} />);
+    const logOut = wrapper.find('a');
+
+    logOut.simulate('click');
+
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
 });
