@@ -14,7 +14,14 @@ export const getCast = (id) => `https://api.themoviedb.org/3/movie/${id}/credits
 export const GOTO_MOVIE = 'GOTO_MOVIE';
 export const MOVIES_FETCH_SUCCESS = 'MOVIES_FETCH_SUCCESS';
 export const MOVIES_ARE_LOADING = 'MOVIES_ARE_LOADING';
-
+export const SIGN_UP = 'SIGN_UP';
+export const LOG_IN = 'LOG_IN';
+export const LOG_OUT = 'LOG_OUT';
+export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL';
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
+export const FAVORITES_FETCH_SUCCESS = 'FAVORITES_FETCH_SUCCESS';
+export const DELETE_FAVORITES_SUCCESS = 'DELETE_FAVORITES_SUCCESS';
+export const ADD_SUCCESS = 'ADD_SUCCESS';
 
 // Helper functions
 export const getBackDropImageStyle = (movie) => {
