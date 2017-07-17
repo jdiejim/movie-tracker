@@ -6,6 +6,7 @@ class CarouselMovie {
     this.year = getYear(movie);;
     this.overview = movie.overview;
     this.movieStyle = getBackDropImageStyle(movie);
+    this.id = movie.movie_id;
   }
 }
 

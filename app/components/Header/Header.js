@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import NavLinks from '../NavLinks/NavLinks';
 
+
 const Header = ({ location: { pathname }, user, logOut }) => {
+
   return (
     <header className="header">
       <nav className="nav-bar">

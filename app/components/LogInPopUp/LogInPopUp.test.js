@@ -9,7 +9,7 @@ describe('LogInPopUp', () => {
     expect(wrapper.find('#login').length).toBe(1);
   });
 
-  it('should NOT render name input field when type login', () => {
+  it('should not render name input field when type login', () => {
     const wrapper = shallow(<LogInPopUp type='login' />);
 
     expect(wrapper.find('#name').length).toBe(0);
