@@ -14,10 +14,11 @@ export default class MovieCard extends Component {
     return (
       <article className={`movie-card ${favorite ? 'favorite' : ''}`}>
         <Link to={`/detail/${movie.movie_id}`}>
-          <div className='sub-card' style={ styles }></div>
-          <div className='movie-card-info'>
-            <h1>{movie.title}</h1>
-            <p>{movie.overview}</p>
+          <div className='sub-card' style={ styles }>
+            <div className='movie-card-info'>
+              <h1>{movie.title}</h1>
+              <p>{movie.overview}</p>
+            </div>
           </div>
         </Link>
         {btn}

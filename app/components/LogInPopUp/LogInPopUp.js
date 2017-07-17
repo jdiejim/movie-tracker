@@ -103,7 +103,7 @@ class LogInPopUp extends Component {
           <section className="popup-input-wrapper">
             {nameInput}
             <input ref={(input) => this.emailInput = input} id="email" className='popup-input' onChange={this.handleChange} type="email" name="email" placeholder="Enter email" value={email} />
-            <input ref={(input) => this.passwordInput = input} id="password" className='popup-input' onChange={this.handleChange} type="text" name="password" placeholder="Enter password" value={password} />
+            <input ref={(input) => this.passwordInput = input} id="password" className='popup-input' onChange={this.handleChange} type="password" name="password" placeholder="Enter password" value={password} />
           </section>
           {errorMsg}
           <button className={btnClass} type="submit" disabled={disabled}>{title}</button>

@@ -58,7 +58,7 @@ export default class MovieDetail extends Component {
           <main className='detail-container'>
             <div className='detail-title'>
               <header className='detail-header'>
-                <h1>{ title } ({ release_date })</h1>
+                <h1 className='detail-movie-title'>{ title } ({ release_date })</h1>
                 <ul className='detail-rating'>
                   <li>Average Rating: { vote_average }</li>
                   <li>Popularity: { parseInt(popularity) }</li>
