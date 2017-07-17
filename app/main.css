@@ -393,7 +393,6 @@ a:visited {
   width: 53.33px;
 }
 
-
 .carousel {
   display: grid;
   grid-template: 100% / 3fr 2fr;
@@ -472,9 +471,23 @@ a:visited {
 
 
 @media screen and (max-width: 450px) {
+ .nav-link-container {
+   margin: 0 15px 0 0;
+ }
+
+ .nav-link {
+   padding: 5px 17px;
+   margin: 0 5px;
+ }
+
+  .logo {
+    margin: 0 20px;
+  }
+
   .movie-list {
     height: 500px;
     grid-template-columns: 1fr;
+    overflow: scroll;
   }
 }
 
@@ -482,6 +495,7 @@ a:visited {
   .movie-list {
     height: 500px;
     grid-template-columns:  1fr 1fr;
+    overflow: scroll;
   }
 }
 @media screen and (min-width: 750px) and (max-width: 950px) {
