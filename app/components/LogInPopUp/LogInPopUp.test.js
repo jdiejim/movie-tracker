@@ -2,8 +2,6 @@ import React              from 'react';
 import { shallow, mount } from 'enzyme';
 import LogInPopUp         from './LogInPopUp';
 import ReactDOM           from 'react-dom';
-import { Provider }       from 'react-redux';
-import configureMockStore from 'redux-mock-store';
 
 describe('LogInPopUp', () => {
   it('should render the correct components when it mounts', () => {
@@ -12,7 +10,7 @@ describe('LogInPopUp', () => {
     expect(wrapper.find('#login').length).toBe(1);
   });
 
-  it('should NOT render name input field when type login', () => {
+  it('should not render name input field when type login', () => {
     const wrapper = shallow(<LogInPopUp type='login' />);
 
     expect(wrapper.find('#name').length).toBe(0);

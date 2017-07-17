@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = (props) => {
-  console.log(props);
     const toggleLink = props.location.pathname === '/favorites' ?
      <Link className='toggle-link nav-link' to="/">Home</Link> : <Link className='toggle-link nav-link'
        to="/favorites">Favorites</Link>

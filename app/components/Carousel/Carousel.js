@@ -33,7 +33,6 @@ class Carousel extends Component {
   }
 
   componentWillUnmount() {
-
     clearInterval(this.state.intervalID);
     window.removeEventListener('animationend', this.removeInfoAnimation);
   }
@@ -73,7 +72,7 @@ class Carousel extends Component {
     const inputClass3 = position === 2 ? 'poster-selector selector-active' : 'poster-selector';
 
     if (!carouselHistory.length) {
-      return <div>Loading carousel</div>
+      return <div className={carouselClass}></div>
     }
 
     const { title, year, movieStyle, overview } = carouselHistory[position];
@@ -81,9 +80,9 @@ class Carousel extends Component {
     return (
       <section className={`${carouselClass} ${carouselAnimation}`}>
         <article className="backdrop-poster" style={movieStyle}>
-          <input className={inputClass1} onClick={this.handlePoster} type="submit" value="0" />
-          <input className={inputClass2} onClick={this.handlePoster} type="submit" value="1" />
-          <input className={inputClass3} onClick={this.handlePoster} type="submit" value="2" />
+          <input id="selector-1" className={inputClass1} onClick={this.handlePoster} type="submit" value="0" />
+          <input id="selector-2" className={inputClass2} onClick={this.handlePoster} type="submit" value="1" />
+          <input id="selector-3" className={inputClass3} onClick={this.handlePoster} type="submit" value="2" />
         </article>
         <article className="carousel-info-wrapper">
           <h1 className="carousel-title">
