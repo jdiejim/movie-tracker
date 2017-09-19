@@ -6,6 +6,7 @@ module.exports = {
   devtool: '#source-map',
   context: __dirname,
    entry: [
+     'babel-polyfill',
      './app/index.js'
    ],
    output: {
@@ -15,7 +16,7 @@ module.exports = {
    },
    module: {
      loaders: [{
-       test: /.jsx?$/,
+       test: /.jsx?$/, loader: 'babel',
        loader: 'babel-loader',
        include: path.join(__dirname, 'app'),
        exclude: /node_modules/,
